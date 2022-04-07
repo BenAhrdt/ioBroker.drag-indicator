@@ -167,7 +167,7 @@ class DragIndicator extends utils.Adapter {
 	}
 
 	// clear the state from the active array. if selected the state will be deleted
-	async clearStateArrayElement(id)
+	async clearStateArrayElement(id, deleteState)
 	{
 		// Unsubscribe and delete states if exists
 		if(this.activeStates[id]){
@@ -180,14 +180,14 @@ class DragIndicator extends utils.Adapter {
 			if(myObj){
 				this.unsubscribeForeignStates(tempId);
 				this.log.info(`state ${tempId} removed`);
-				if(this.config.deleteStatesWithDisable){
+				if(this.config.deleteStatesWithDisable || deleteState){
 					this.delObjectAsync(tempId);
 					this.log.info(`state ${this.namespace}.${tempId} deleted`);
 				}
 			}
 		}
 		// Delete channel Object
-		if(this.config.deleteStatesWithDisable){
+		if(this.config.deleteStatesWithDisable || deleteState){
 			this.delObjectAsync(this.createStatestring(id));
 		}
 
@@ -213,7 +213,7 @@ class DragIndicator extends utils.Adapter {
 					this.log.error(`Can't get information for ${id}, state will be ignored`);
 					if(this.activeStates[id] != undefined)
 					{
-						this.clearStateArrayElement(id);
+						this.clearStateArrayElement(id,false);
 					}
 					return;
 				} else
@@ -221,7 +221,7 @@ class DragIndicator extends utils.Adapter {
 					if(!stateInfo.common.custom || !stateInfo.common.custom[this.namespace]){
 						if(this.activeStates[id])
 						{
-							this.clearStateArrayElement(id);
+							this.clearStateArrayElement(id,false);
 							return;
 						}
 					}
@@ -250,15 +250,16 @@ class DragIndicator extends utils.Adapter {
 				}
 			} catch (error) {
 				this.log.error(error);
-				this.clearStateArrayElement(id);
+				this.clearStateArrayElement(id,false);
 			}
 		} else {
 			// The object was deleted
 			// Check if the object is kwnow
 			const obj = await this.getObjectAsync(this.createStatestring(id) + this.additionalIds.consumed);
+			this.log.info(JSON.stringify(obj));
 			if(this.activeStates[id] || obj)
 			{
-				this.clearStateArrayElement(id);
+				this.clearStateArrayElement(id,true);
 			}
 		}
 	}
