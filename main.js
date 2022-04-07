@@ -218,7 +218,6 @@ class DragIndicator extends utils.Adapter {
 					return;
 				} else
 				{
-					this.log.info("BESCHREIBUNG !!!" + JSON.stringify(stateInfo));
 					if(!stateInfo.common.custom || !stateInfo.common.custom[this.namespace]){
 						if(this.activeStates[id])
 						{
