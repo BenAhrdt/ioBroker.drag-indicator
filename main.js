@@ -131,11 +131,9 @@ class DragIndicator extends utils.Adapter {
 			},
 			native : {},
 		});
-		this.log.info("created");
 
 		// create adapter internal states
 		for(const myId in this.additionalIds){
-			this.log.info(id);
 			const tempId = this.createStatestring(id) + this.additionalIds[myId];
 			await this.setObjectNotExistsAsync(tempId,{
 				type: "state",
@@ -152,13 +150,8 @@ class DragIndicator extends utils.Adapter {
 			});
 			this.log.info(`state ${tempId} added / activated`);
 			this.subscribeStates(tempId);
-			const lastState = await this.getStateAsync(tempId);
-			if(lastState !== undefined && lastState !== null){
-				this.activeStatesLastAdditionalValues[this.namespace + "." + tempId] = lastState.val;
-			}
-			else{
-				this.activeStatesLastAdditionalValues[this.namespace + "." + tempId] = 0;
-			}
+			this.activeStatesLastAdditionalValues[this.namespace + "." + tempId] = state.val;
+			this.setState(tempId,state.val,true);
 		}
 
 		// Subcribe main state
@@ -225,7 +218,8 @@ class DragIndicator extends utils.Adapter {
 					return;
 				} else
 				{
-					if(!stateInfo.common.custom){
+					this.log.info("BESCHREIBUNG !!!" + JSON.stringify(stateInfo));
+					if(!stateInfo.common.custom || !stateInfo.common.custom[this.namespace]){
 						if(this.activeStates[id])
 						{
 							this.clearStateArrayElement(id);
