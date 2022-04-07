@@ -32,7 +32,9 @@ class DragIndicator extends utils.Adapter {
 
 		this.additionalIds = {
 			max : ".max",
-			min : ".min"
+			maxTime : ".maxTime",
+			min : ".min",
+			minTime : ".minTime"
 		};
 
 		// define arrays for selected states and calculation
@@ -135,23 +137,42 @@ class DragIndicator extends utils.Adapter {
 		// create adapter internal states
 		for(const myId in this.additionalIds){
 			const tempId = this.createStatestring(id) + this.additionalIds[myId];
-			await this.setObjectNotExistsAsync(tempId,{
-				type: "state",
-				common: {
-					name: common.name,
-					type: common.type,
-					role: common.role,
-					unit: common.unit,
-					read: true,
-					write: true,
-					def: 0
-				},
-				native: {},
-			});
-			this.log.info(`state ${tempId} added / activated`);
-			this.subscribeStates(tempId);
-			this.activeStatesLastAdditionalValues[this.namespace + "." + tempId] = state.val;
-			this.setState(tempId,state.val,true);
+			if(this.additionalIds[myId] != this.additionalIds.maxTime && this.additionalIds[myId] != this.additionalIds.minTime){
+				await this.setObjectNotExistsAsync(tempId,{
+					type: "state",
+					common: {
+						name: common.name,
+						type: common.type,
+						role: common.role,
+						unit: common.unit,
+						read: true,
+						write: true,
+						def: 0
+					},
+					native: {},
+				});
+				this.log.info(`state ${tempId} added / activated`);
+				this.subscribeStates(tempId);
+				this.activeStatesLastAdditionalValues[this.namespace + "." + tempId] = state.val;
+				this.setState(tempId,state.val,true);
+			}
+			else{
+				await this.setObjectNotExistsAsync(tempId,{
+					type: "state",
+					common: {
+						name: myId,
+						type: "string",
+						role: "timestamp",
+						read: true,
+						write: false,
+						def: 0
+					},
+					native: {},
+				});
+				this.log.info(`state ${tempId} added / activated`);
+				this.subscribeStates(tempId);
+				this.setState(tempId,this.getCurrentTimerstring(),true);
+			}
 		}
 
 		// Subcribe main state
@@ -280,6 +301,7 @@ class DragIndicator extends utils.Adapter {
 						const tempValue = state.val;
 						this.activeStatesLastAdditionalValues[this.namespace + "." + tempId] = tempValue;
 						this.setStateAsync(tempId,tempValue,true);
+						this.setStateAsync(this.createStatestring(id) + this.additionalIds.maxTime,this.getCurrentTimerstring(),true);
 					}
 					else{
 						tempId = this.createStatestring(id) + this.additionalIds.min;
@@ -287,6 +309,7 @@ class DragIndicator extends utils.Adapter {
 							const tempValue = state.val;
 							this.activeStatesLastAdditionalValues[this.namespace + "." + tempId] = tempValue;
 							this.setStateAsync(tempId,tempValue,true);
+							this.setStateAsync(this.createStatestring(id) + this.additionalIds.minTime,this.getCurrentTimerstring(),true);
 						}
 					}
 				}
@@ -304,6 +327,16 @@ class DragIndicator extends utils.Adapter {
 		}
 	}
 
+	getCurrentTimerstring(){
+		const cur = new Date();
+		const year = cur.getFullYear();
+		const month = cur.getMonth() + 1;
+		const day = cur.getDate();
+		const hour = cur.getHours();
+		const minute = cur.getMinutes();
+		const seconds = cur.getSeconds();
+		return `${hour}:${minute}:${seconds} ${day}.${month}.${year}`;
+	}
 	// If you need to accept messages in your adapter, uncomment the following block and the corresponding line in the constructor.
 	// /**
 	//  * Some message was sent to this instance over message box. Used by email, pushover, text2speech, ...
