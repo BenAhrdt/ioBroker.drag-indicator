@@ -1,0 +1,101 @@
+{
+	"common": {
+		"name": "drag-indicator",
+		"version": "0.0.1",
+		"news": {
+			"0.0.1": {
+				"en": "initial release",
+				"de": "Erstveröffentlichung",
+				"ru": "Начальная версия",
+				"pt": "lançamento inicial",
+				"nl": "Eerste uitgave",
+				"fr": "Première version",
+				"it": "Versione iniziale",
+				"es": "Versión inicial",
+				"pl": "Pierwsze wydanie",
+				"zh-cn": "首次出版"
+			}
+		},
+		"title": "Drag-Indicator",
+		"titleLang": {
+			"en": "Drag-Indicator",
+			"de": "Schleppzeiger",
+			"ru": "Индикатор перетаскивания",
+			"pt": "Indicador de arrastar",
+			"nl": "Sleep-indicator",
+			"fr": "Indicateur de traînée",
+			"it": "Indicatore di trascinamento",
+			"es": "Indicador de arrastre",
+			"pl": "Wskaźnik przeciągania",
+			"zh-cn": "拖动指示器"
+		},
+		"desc": {
+			"en": "Shows the min and max of a selected value",
+			"de": "Zeigt das Minimum und Maximum eines ausgewählten Werts an",
+			"ru": "Показывает минимум и максимум выбранного значения",
+			"pt": "Mostra o mínimo e o máximo de um valor selecionado",
+			"nl": "Toont de min en max van een geselecteerde waarde",
+			"fr": "Affiche le min et le max d'une valeur sélectionnée",
+			"it": "Mostra il minimo e il massimo di un valore selezionato",
+			"es": "Muestra el mínimo y el máximo de un valor seleccionado",
+			"pl": "Pokazuje minimalną i maksymalną wartość wybranej wartości",
+			"zh-cn": "显示所选值的最小值和最大值"
+		},
+		"authors": [
+			"BenAhrdt <bsahrdt@gmail.com>"
+		],
+		"keywords": [
+			"drag-indicator",
+			"Schleppzeiger",
+			"min",
+			"max"
+		],
+		"license": "MIT",
+		"platform": "Javascript/Node.js",
+		"main": "main.js",
+		"icon": "drag-indicator.png",
+		"enabled": true,
+		"extIcon": "https://raw.githubusercontent.com/BenAhrdt/ioBroker.drag-indicator/main/admin/drag-indicator.png",
+		"readme": "https://github.com/BenAhrdt/ioBroker.drag-indicator/blob/main/README.md",
+		"loglevel": "info",
+		"mode": "daemon",
+		"type": "energy",
+		"compact": true,
+		"connectionType": "local",
+		"dataSource": "poll",
+		"materialize": true,
+		"supportCustoms": true,
+		"dependencies": [
+			{
+				"js-controller": ">=2.0.0"
+			}
+		]
+	},
+	"native": {
+		"deleteStatesWithDisable": false
+	},
+	"objects": [],
+	"instanceObjects": [
+		{
+			"_id": "info",
+			"type": "channel",
+			"common": {
+				"name": "Information"
+			},
+			"native": {}
+		},
+		{
+			"_id": "info.connection",
+			"type": "state",
+			"common": {
+				"role": "indicator.connected",
+				"name": "Device or service connected",
+				"type": "boolean",
+				"read": true,
+				"write": false,
+				"def": false
+			},
+			"native": {}
+		}
+	]
+}

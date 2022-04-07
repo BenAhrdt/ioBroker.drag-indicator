@@ -1,0 +1,23 @@
+{
+  "i18n": true,
+  "items": {
+    "_basicSettings": {
+      "newLine": true,
+      "type": "header",
+      "text": "Zählereinstellungen",
+      "sm": 20
+    },
+    "warningText": {
+      "newLine": true,
+      "type": "staticText",
+      "text": "!!! Achtung, es können nur Datenpunkte vom Typ number ausgewählt werden",
+      "sm": 12
+    },
+    "channelName": {
+      "type": "text",
+      "label": "Name",
+      "tooltip": "Tragen Sie hier den Name des Datenpunkts ein, welcher später in dem übergeordnerten Verzeichnnis angezeigt werden soll.",
+      "sm":3
+    }
+  }
+}
