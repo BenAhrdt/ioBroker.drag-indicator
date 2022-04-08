@@ -334,9 +334,9 @@ class DragIndicator extends utils.Adapter {
 						// Get current value
 						const curValue = await this.getForeignStateAsync(this.activeStatesLastAdditionalValues[id]);
 						if(curValue){
-							this.setStateAsync(subId + this.additionalIds.max,curValue,true);
+							this.setStateAsync(subId + this.additionalIds.max,curValue.val,true);
 							this.setStateAsync(subId + this.additionalIds.maxTime,this.getCurrentTimerstring(),true);
-							this.setStateAsync(subId + this.additionalIds.min,curValue,true);
+							this.setStateAsync(subId + this.additionalIds.min,curValue.val,true);
 							this.setStateAsync(subId + this.additionalIds.minTime,this.getCurrentTimerstring(),true);
 							this.setForeignStateAsync(id,false,true);
 						}
