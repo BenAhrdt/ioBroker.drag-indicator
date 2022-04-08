@@ -34,8 +34,11 @@ class DragIndicator extends utils.Adapter {
 			max : ".max",
 			maxTime : ".maxTime",
 			min : ".min",
-			minTime : ".minTime"
+			minTime : ".minTime",
+			reset : ".reset"
 		};
+
+		this.observedValuesId = "observed_Values.";
 
 		// define arrays for selected states and calculation
 		this.activeStates = {};
@@ -137,7 +140,42 @@ class DragIndicator extends utils.Adapter {
 		// create adapter internal states
 		for(const myId in this.additionalIds){
 			const tempId = this.createStatestring(id) + this.additionalIds[myId];
-			if(this.additionalIds[myId] != this.additionalIds.maxTime && this.additionalIds[myId] != this.additionalIds.minTime){
+			if(this.additionalIds[myId] == this.additionalIds.reset){
+				await this.setObjectNotExistsAsync(tempId,{
+					type: "state",
+					common: {
+						name: myId,
+						type: "boolean",
+						role: "reset",
+						read: true,
+						write: true,
+						def: false
+					},
+					native: {},
+				});
+				this.log.info(`state ${tempId} added / activated`);
+				this.subscribeStates(tempId);
+				this.activeStatesLastAdditionalValues[this.namespace + "." + tempId] = id;
+				this.setState(tempId,false,true);
+			}
+			else if(this.additionalIds[myId] == this.additionalIds.maxTime || this.additionalIds[myId] == this.additionalIds.minTime){
+				await this.setObjectNotExistsAsync(tempId,{
+					type: "state",
+					common: {
+						name: myId,
+						type: "string",
+						role: "timestamp",
+						read: true,
+						write: false,
+						def: this.getCurrentTimerstring()
+					},
+					native: {},
+				});
+				this.log.info(`state ${tempId} added / activated`);
+				this.subscribeStates(tempId);
+				this.setState(tempId,this.getCurrentTimerstring(),true);
+			}
+			else{
 				await this.setObjectNotExistsAsync(tempId,{
 					type: "state",
 					common: {
@@ -156,23 +194,6 @@ class DragIndicator extends utils.Adapter {
 				this.activeStatesLastAdditionalValues[this.namespace + "." + tempId] = state.val;
 				this.setState(tempId,state.val,true);
 			}
-			else{
-				await this.setObjectNotExistsAsync(tempId,{
-					type: "state",
-					common: {
-						name: myId,
-						type: "string",
-						role: "timestamp",
-						read: true,
-						write: false,
-						def: this.getCurrentTimerstring()
-					},
-					native: {},
-				});
-				this.log.info(`state ${tempId} added / activated`);
-				this.subscribeStates(tempId);
-				this.setState(tempId,this.getCurrentTimerstring(),true);
-			}
 		}
 
 		// Subcribe main state
@@ -184,7 +205,7 @@ class DragIndicator extends utils.Adapter {
 	}
 
 	createStatestring(id){
-		return `observed_Values.${id.replace(/\./g, "_")}`;
+		return `${this.observedValuesId}${id.replace(/\./g, "_")}`;
 	}
 
 	// clear the state from the active array. if selected the state will be deleted
@@ -278,7 +299,7 @@ class DragIndicator extends utils.Adapter {
 	 * @param {string} id
 	 * @param {ioBroker.State | null | undefined} state
 	 */
-	onStateChange(id, state) {
+	async onStateChange(id, state) {
 		if (state) {
 			// Check if state.val is reachable
 			if(state.val !== undefined && state.val !== null){
@@ -304,8 +325,26 @@ class DragIndicator extends utils.Adapter {
 
 				// Check Changes in interneal States
 				else if(this.activeStatesLastAdditionalValues[id] !== undefined && this.activeStatesLastAdditionalValues[id] !== null && !state.ack){
-					this.activeStatesLastAdditionalValues[id] = state.val;
-					this.setForeignStateAsync(id,state.val,true);
+					const extentionLength = this.additionalIds.reset.length;
+					const extention = id.substring(id.length - extentionLength);
+					const prefixLengt = this.namespace.length;
+					const prefix = id.substring(0,prefixLengt);
+					if(extention == this.additionalIds.reset && prefix == this.namespace){
+						const subId = id.substring(prefixLengt + 1,id.length - extentionLength);
+						// Get current value
+						const curValue = await this.getForeignStateAsync(this.activeStatesLastAdditionalValues[id]);
+						if(curValue){
+							this.setStateAsync(subId + this.additionalIds.max,curValue,true);
+							this.setStateAsync(subId + this.additionalIds.maxTime,this.getCurrentTimerstring(),true);
+							this.setStateAsync(subId + this.additionalIds.min,curValue,true);
+							this.setStateAsync(subId + this.additionalIds.minTime,this.getCurrentTimerstring(),true);
+							this.setForeignStateAsync(id,false,true);
+						}
+					}
+					else{
+						this.activeStatesLastAdditionalValues[id] = state.val;
+						this.setForeignStateAsync(id,state.val,true);
+					}
 				}
 			}
 
