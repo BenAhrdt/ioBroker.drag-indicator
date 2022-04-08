@@ -7,6 +7,8 @@
 // The adapter-core module gives you access to the core ioBroker functions
 // you need to create an adapter
 const utils = require("@iobroker/adapter-core");
+const { LOADIPHLPAPI } = require("dns");
+const schedule = require("node-schedule");
 
 // Load your modules here, e.g.:
 // const fs = require("fs");
@@ -39,6 +41,8 @@ class DragIndicator extends utils.Adapter {
 		};
 
 		this.observedValuesId = "observed_Values.";
+		this.cronJobs = {};
+		this.jobId = "jobId";
 
 		// define arrays for selected states and calculation
 		this.activeStates = {};
@@ -102,12 +106,11 @@ class DragIndicator extends utils.Adapter {
 	 */
 	onUnload(callback) {
 		try {
-			// Here you must clear all timeouts or intervals that may still be active
-			// clearTimeout(timeout1);
-			// clearTimeout(timeout2);
-			// ...
-			// clearInterval(interval1);
-
+			// clear all schedules
+			for(const cronJob in this.cronJobs)
+			{
+				schedule.cancelJob(this.cronJobs[cronJob][this.jobId]);
+			}
 			callback();
 		} catch (e) {
 			callback();
@@ -153,7 +156,7 @@ class DragIndicator extends utils.Adapter {
 					},
 					native: {},
 				});
-				this.log.info(`state ${tempId} added / activated`);
+				this.log.debug(`state ${tempId} added / activated`);
 				this.subscribeStates(tempId);
 				this.activeStatesLastAdditionalValues[this.namespace + "." + tempId] = id;
 				this.setState(tempId,false,true);
@@ -171,7 +174,7 @@ class DragIndicator extends utils.Adapter {
 					},
 					native: {},
 				});
-				this.log.info(`state ${tempId} added / activated`);
+				this.log.debug(`state ${tempId} added / activated`);
 				this.subscribeStates(tempId);
 				this.setState(tempId,this.getCurrentTimerstring(),true);
 			}
@@ -189,11 +192,20 @@ class DragIndicator extends utils.Adapter {
 					},
 					native: {},
 				});
-				this.log.info(`state ${tempId} added / activated`);
+				this.log.debug(`state ${tempId} added / activated`);
 				this.subscribeStates(tempId);
 				this.activeStatesLastAdditionalValues[this.namespace + "." + tempId] = state.val;
 				this.setState(tempId,state.val,true);
 			}
+		}
+
+		if(customInfo.cronJob != ""){
+			if(!this.cronJobs[customInfo.resetCronJob]){
+				this.cronJobs[customInfo.resetCronJob] = {};
+				this.cronJobs[customInfo.resetCronJob][this.jobId] = schedule.scheduleJob(customInfo.resetCronJob,this.resetWithCronJob.bind(this,customInfo.resetCronJob));
+			}
+			this.cronJobs[customInfo.resetCronJob][this.createStatestring(id)] = {};
+			this.activeStates[id].lastCronJob = customInfo.resetCronJob;
 		}
 
 		// Subcribe main state
@@ -201,6 +213,18 @@ class DragIndicator extends utils.Adapter {
 			this.subscribeForeignStates(id);
 			this.subscribecounter += 1;
 			this.setState(this.subscribecounterId,this.subscribecounter,true);
+		}
+	}
+
+	// if the id is scheduled, it will be deleted from active array
+	removefromCronJob(cronJob,id)
+	{
+		delete this.cronJobs[cronJob][id];
+		if(Object.keys(this.cronJobs[cronJob]).length <= 1)
+		{
+			this.log.debug("job canceled: " + cronJob);
+			schedule.cancelJob(this.cronJobs[cronJob][this.jobId]);
+			delete this.cronJobs[cronJob];
 		}
 	}
 
@@ -214,7 +238,7 @@ class DragIndicator extends utils.Adapter {
 		// Unsubscribe and delete states if exists
 		if(this.activeStates[id]){
 			this.unsubscribeForeignStates(id);
-			this.log.info(`state ${id} not longer subscribed`);
+			this.log.debug(`state ${id} not longer subscribed`);
 			delete this.activeStates[id];
 			this.subscribecounter -= 1;
 			this.setState(this.subscribecounterId,this.subscribecounter,true);
@@ -225,9 +249,9 @@ class DragIndicator extends utils.Adapter {
 				const myObj = await this.getObjectAsync(tempId);
 				if(myObj){
 					this.unsubscribeStatesAsync(tempId);
-					this.log.info(`state ${tempId} removed`);
+					this.log.debug(`state ${tempId} removed`);
 					this.delObjectAsync(tempId);
-					this.log.info(`state ${this.namespace}.${tempId} deleted`);
+					this.log.debug(`state ${this.namespace}.${tempId} deleted`);
 				}
 			}
 			// Delete channel Object
@@ -262,6 +286,7 @@ class DragIndicator extends utils.Adapter {
 						{
 							const state = await this.getForeignStateAsync(id);
 							if(state){
+								this.removefromCronJob(this.activeStates[id].lastCronJob,this.createStatestring(id));
 								await this.addObjectAndCreateState(id,stateInfo.common,customInfo,state,false);
 							}
 						}
@@ -294,6 +319,13 @@ class DragIndicator extends utils.Adapter {
 		}
 	}
 
+	resetWithCronJob(cronJob){
+		for(const ele in this.cronJobs[cronJob]){
+			if(ele != this.jobId){
+				this.resetValues(this.namespace + "." + ele + this.additionalIds.reset,this.namespace.length,this.additionalIds.reset.length);
+			}
+		}
+	}
 	/**
 	 * Is called if a subscribed state changes
 	 * @param {string} id
@@ -330,16 +362,12 @@ class DragIndicator extends utils.Adapter {
 					const prefixLengt = this.namespace.length;
 					const prefix = id.substring(0,prefixLengt);
 					if(extention == this.additionalIds.reset && prefix == this.namespace){
-						const subId = id.substring(prefixLengt + 1,id.length - extentionLength);
-						// Get current state
-						const curState = await this.getForeignStateAsync(this.activeStatesLastAdditionalValues[id]);
-						if(curState){
-							this.activeStatesLastAdditionalValues[this.namespace + "." + subId + this.additionalIds.max] = curState.val;
-							this.setStateAsync(subId + this.additionalIds.max,curState.val,true);
-							this.setStateAsync(subId + this.additionalIds.maxTime,this.getCurrentTimerstring(),true);
-							this.activeStatesLastAdditionalValues[this.namespace +  "." + subId + this.additionalIds.min] = curState.val;
-							this.setStateAsync(subId + this.additionalIds.min,curState.val,true);
-							this.setStateAsync(subId + this.additionalIds.minTime,this.getCurrentTimerstring(),true);
+						// check that reset is true
+						if(state.val == true){
+							this.resetValues(id,prefixLengt,extentionLength);
+							this.setForeignStateAsync(id,true,true);
+						}
+						else{
 							this.setForeignStateAsync(id,false,true);
 						}
 					}
@@ -352,7 +380,7 @@ class DragIndicator extends utils.Adapter {
 
 		} else {
 			// The state was deleted
-			this.log.info(`state ${id} deleted`);
+			this.log.debug(`state ${id} deleted`);
 		}
 	}
 
@@ -366,6 +394,20 @@ class DragIndicator extends utils.Adapter {
 		const second = cur.getSeconds();
 		return `${year}-${month}-${day} ${hour}:${minute}:${second}`;
 	}
+
+	async resetValues(id,prefixLengt,extentionLength){
+		const subId = id.substring(prefixLengt + 1,id.length - extentionLength);
+		// Get current state
+		const curState = await this.getForeignStateAsync(this.activeStatesLastAdditionalValues[id]);
+		if(curState){
+			this.activeStatesLastAdditionalValues[this.namespace + "." + subId + this.additionalIds.max] = curState.val;
+			this.setStateAsync(subId + this.additionalIds.max,curState.val,true);
+			this.setStateAsync(subId + this.additionalIds.maxTime,this.getCurrentTimerstring(),true);
+			this.activeStatesLastAdditionalValues[this.namespace +  "." + subId + this.additionalIds.min] = curState.val;
+			this.setStateAsync(subId + this.additionalIds.min,curState.val,true);
+			this.setStateAsync(subId + this.additionalIds.minTime,this.getCurrentTimerstring(),true);
+		}
+	}
 	// If you need to accept messages in your adapter, uncomment the following block and the corresponding line in the constructor.
 	// /**
 	//  * Some message was sent to this instance over message box. Used by email, pushover, text2speech, ...
@@ -376,7 +418,7 @@ class DragIndicator extends utils.Adapter {
 	// 	if (typeof obj === "object" && obj.message) {
 	// 		if (obj.command === "send") {
 	// 			// e.g. send email or pushover or whatever
-	// 			this.log.info("send command");
+	// 			this.log.debug("send command");
 
 	// 			// Send response in callback if required
 	// 			if (obj.callback) this.sendTo(obj.from, obj.command, "Message received", obj.callback);

@@ -18,6 +18,13 @@
       "label": "Name",
       "tooltip": "Tragen Sie hier den Name des Datenpunkts ein, welcher später in dem übergeordnerten Verzeichnnis angezeigt werden soll.",
       "sm":3
+    },
+    "resetCronJob": {
+      "newLine": true,
+      "type": "cron",
+      "label": "Automatischer Reset",
+      "tooltip": "Tragen Sie hier den entsprechenden cronJob ein, bei welchem ein automatischer Reset erfolgen soll.",
+      "sm":6
     }
   }
 }
