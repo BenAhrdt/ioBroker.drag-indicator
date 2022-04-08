@@ -323,8 +323,7 @@ class DragIndicator extends utils.Adapter {
 		const hour = cur.getHours();
 		const minute = cur.getMinutes();
 		const second = cur.getSeconds();
-		const milisecond = cur.getMilliseconds();
-		return `${year}-${month}-${day} ${hour}:${minute}:${second}.${milisecond}`;
+		return `${year}-${month}-${day} ${hour}:${minute}:${second}`;
 	}
 	// If you need to accept messages in your adapter, uncomment the following block and the corresponding line in the constructor.
 	// /**
