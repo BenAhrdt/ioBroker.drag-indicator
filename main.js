@@ -331,12 +331,12 @@ class DragIndicator extends utils.Adapter {
 					const prefix = id.substring(0,prefixLengt);
 					if(extention == this.additionalIds.reset && prefix == this.namespace){
 						const subId = id.substring(prefixLengt + 1,id.length - extentionLength);
-						// Get current value
-						const curValue = await this.getForeignStateAsync(this.activeStatesLastAdditionalValues[id]);
-						if(curValue){
-							this.setStateAsync(subId + this.additionalIds.max,curValue.val,true);
+						// Get current state
+						const curState = await this.getForeignStateAsync(this.activeStatesLastAdditionalValues[id]);
+						if(curState){
+							this.setStateAsync(subId + this.additionalIds.max,curState.val,true);
 							this.setStateAsync(subId + this.additionalIds.maxTime,this.getCurrentTimerstring(),true);
-							this.setStateAsync(subId + this.additionalIds.min,curValue.val,true);
+							this.setStateAsync(subId + this.additionalIds.min,curState.val,true);
 							this.setStateAsync(subId + this.additionalIds.minTime,this.getCurrentTimerstring(),true);
 							this.setForeignStateAsync(id,false,true);
 						}
