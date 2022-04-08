@@ -165,7 +165,7 @@ class DragIndicator extends utils.Adapter {
 						role: "timestamp",
 						read: true,
 						write: false,
-						def: 0
+						def: this.getCurrentTimerstring()
 					},
 					native: {},
 				});
