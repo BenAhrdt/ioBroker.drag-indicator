@@ -7,7 +7,6 @@
 // The adapter-core module gives you access to the core ioBroker functions
 // you need to create an adapter
 const utils = require("@iobroker/adapter-core");
-const { LOADIPHLPAPI } = require("dns");
 const schedule = require("node-schedule");
 
 // Load your modules here, e.g.:
@@ -34,9 +33,9 @@ class DragIndicator extends utils.Adapter {
 
 		this.additionalIds = {
 			max : ".max",
-			maxTime : ".maxTime",
+			maxTime : ".maxTimestamp",
 			min : ".min",
-			minTime : ".minTime",
+			minTime : ".minTimestamp",
 			reset : ".reset"
 		};
 
@@ -170,13 +169,13 @@ class DragIndicator extends utils.Adapter {
 						role: "timestamp",
 						read: true,
 						write: false,
-						def: this.getCurrentTimerstring()
+						def: Date.now()
 					},
 					native: {},
 				});
 				this.log.debug(`state ${tempId} added / activated`);
 				this.subscribeStates(tempId);
-				this.setState(tempId,this.getCurrentTimerstring(),true);
+				this.setState(tempId,Date.now(),true);
 			}
 			else{
 				await this.setObjectNotExistsAsync(tempId,{
@@ -342,7 +341,7 @@ class DragIndicator extends utils.Adapter {
 						const tempValue = state.val;
 						this.activeStatesLastAdditionalValues[this.namespace + "." + tempId] = tempValue;
 						this.setStateAsync(tempId,tempValue,true);
-						this.setStateAsync(this.createStatestring(id) + this.additionalIds.maxTime,this.getCurrentTimerstring(),true);
+						this.setStateAsync(this.createStatestring(id) + this.additionalIds.maxTime,Date.now(),true);
 					}
 					else{
 						tempId = this.createStatestring(id) + this.additionalIds.min;
@@ -350,7 +349,7 @@ class DragIndicator extends utils.Adapter {
 							const tempValue = state.val;
 							this.activeStatesLastAdditionalValues[this.namespace + "." + tempId] = tempValue;
 							this.setStateAsync(tempId,tempValue,true);
-							this.setStateAsync(this.createStatestring(id) + this.additionalIds.minTime,this.getCurrentTimerstring(),true);
+							this.setStateAsync(this.createStatestring(id) + this.additionalIds.minTime,Date.now(),true);
 						}
 					}
 				}
@@ -384,17 +383,6 @@ class DragIndicator extends utils.Adapter {
 		}
 	}
 
-	getCurrentTimerstring(){
-		const cur = new Date();
-		const year = cur.getFullYear();
-		const month = cur.getMonth() + 1;
-		const day = cur.getDate();
-		const hour = cur.getHours();
-		const minute = cur.getMinutes();
-		const second = cur.getSeconds();
-		return `${year}-${month}-${day} ${hour}:${minute}:${second}`;
-	}
-
 	async resetValues(id,prefixLengt,extentionLength){
 		const subId = id.substring(prefixLengt + 1,id.length - extentionLength);
 		// Get current state
@@ -402,10 +390,10 @@ class DragIndicator extends utils.Adapter {
 		if(curState){
 			this.activeStatesLastAdditionalValues[this.namespace + "." + subId + this.additionalIds.max] = curState.val;
 			this.setStateAsync(subId + this.additionalIds.max,curState.val,true);
-			this.setStateAsync(subId + this.additionalIds.maxTime,this.getCurrentTimerstring(),true);
+			this.setStateAsync(subId + this.additionalIds.maxTime,Date.now());
 			this.activeStatesLastAdditionalValues[this.namespace +  "." + subId + this.additionalIds.min] = curState.val;
 			this.setStateAsync(subId + this.additionalIds.min,curState.val,true);
-			this.setStateAsync(subId + this.additionalIds.minTime,this.getCurrentTimerstring(),true);
+			this.setStateAsync(subId + this.additionalIds.minTime,Date.now(),true);
 		}
 	}
 	// If you need to accept messages in your adapter, uncomment the following block and the corresponding line in the constructor.
