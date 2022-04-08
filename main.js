@@ -390,7 +390,7 @@ class DragIndicator extends utils.Adapter {
 		if(curState){
 			this.activeStatesLastAdditionalValues[this.namespace + "." + subId + this.additionalIds.max] = curState.val;
 			this.setStateAsync(subId + this.additionalIds.max,curState.val,true);
-			this.setStateAsync(subId + this.additionalIds.maxTime,Date.now());
+			this.setStateAsync(subId + this.additionalIds.maxTime,Date.now(),true);
 			this.activeStatesLastAdditionalValues[this.namespace +  "." + subId + this.additionalIds.min] = curState.val;
 			this.setStateAsync(subId + this.additionalIds.min,curState.val,true);
 			this.setStateAsync(subId + this.additionalIds.minTime,Date.now(),true);
