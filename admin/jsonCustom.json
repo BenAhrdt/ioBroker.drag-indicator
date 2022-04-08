@@ -21,6 +21,7 @@
     },
     "resetCronJob": {
       "newLine": true,
+      "simple": true,
       "type": "cron",
       "label": "Automatischer Reset",
       "tooltip": "Tragen Sie hier den entsprechenden cronJob ein, bei welchem ein automatischer Reset erfolgen soll.",
