@@ -165,7 +165,7 @@ class DragIndicator extends utils.Adapter {
 					type: "state",
 					common: {
 						name: myId,
-						type: "string",
+						type: "number",
 						role: "timestamp",
 						read: true,
 						write: false,
