@@ -205,6 +205,10 @@ class DragIndicator extends utils.Adapter {
 			this.cronJobs[customInfo.resetCronJob][this.createStatestring(id)] = {};
 			this.activeStates[id].lastCronJob = customInfo.resetCronJob;
 		}
+		else
+		{
+			this.activeStates[id].lastCronJob = "";
+		}
 
 		// Subcribe main state
 		if(countUpSubscibecounter){
@@ -217,14 +221,16 @@ class DragIndicator extends utils.Adapter {
 	// if the id is scheduled, it will be deleted from active array
 	removefromCronJob(cronJob,id)
 	{
-		delete this.cronJobs[cronJob][id];
-		if(Object.keys(this.cronJobs[cronJob]).length <= 1)
-		{
-			this.log.debug("job canceled: " + cronJob);
-			schedule.cancelJob(this.cronJobs[cronJob][this.jobId]);
-			delete this.cronJobs[cronJob];
+		if(this.activeStates[id].lastCronJob != ""){
+			delete this.cronJobs[cronJob][this.createStatestring(id)];
+			if(Object.keys(this.cronJobs[cronJob]).length <= 1)
+			{
+				this.log.debug("job canceled: " + cronJob);
+				schedule.cancelJob(this.cronJobs[cronJob][this.jobId]);
+				delete this.cronJobs[cronJob];
+			}
+			this.activeStates[id].lastCronJob = "";
 		}
-		this.activeStates[id].lastCronJob = "";
 	}
 
 	createStatestring(id){
@@ -236,7 +242,7 @@ class DragIndicator extends utils.Adapter {
 	{
 		// Unsubscribe and delete states if exists
 		if(this.activeStates[id]){
-			this.removefromCronJob(this.activeStates[id].lastCronJob,this.createStatestring(id));
+			this.removefromCronJob(this.activeStates[id].lastCronJob,id);
 			this.unsubscribeForeignStates(id);
 			this.log.debug(`state ${id} not longer subscribed`);
 			delete this.activeStates[id];
@@ -286,7 +292,7 @@ class DragIndicator extends utils.Adapter {
 						{
 							const state = await this.getForeignStateAsync(id);
 							if(state){
-								this.removefromCronJob(this.activeStates[id].lastCronJob,this.createStatestring(id));
+								this.removefromCronJob(this.activeStates[id].lastCronJob,id);
 								await this.addObjectAndCreateState(id,stateInfo.common,customInfo,state,false);
 							}
 						}
