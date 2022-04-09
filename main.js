@@ -197,8 +197,7 @@ class DragIndicator extends utils.Adapter {
 				this.setState(tempId,state.val,true);
 			}
 		}
-
-		if(customInfo.cronJob != ""){
+		if(customInfo.resetCronJob != ""){
 			if(!this.cronJobs[customInfo.resetCronJob]){
 				this.cronJobs[customInfo.resetCronJob] = {};
 				this.cronJobs[customInfo.resetCronJob][this.jobId] = schedule.scheduleJob(customInfo.resetCronJob,this.resetWithCronJob.bind(this,customInfo.resetCronJob));
@@ -225,6 +224,7 @@ class DragIndicator extends utils.Adapter {
 			schedule.cancelJob(this.cronJobs[cronJob][this.jobId]);
 			delete this.cronJobs[cronJob];
 		}
+		this.activeStates[id].lastCronJob = "";
 	}
 
 	createStatestring(id){
@@ -236,6 +236,7 @@ class DragIndicator extends utils.Adapter {
 	{
 		// Unsubscribe and delete states if exists
 		if(this.activeStates[id]){
+			this.removefromCronJob(this.activeStates[id].lastCronJob,this.createStatestring(id));
 			this.unsubscribeForeignStates(id);
 			this.log.debug(`state ${id} not longer subscribed`);
 			delete this.activeStates[id];
@@ -320,6 +321,8 @@ class DragIndicator extends utils.Adapter {
 
 	resetWithCronJob(cronJob){
 		for(const ele in this.cronJobs[cronJob]){
+			this.log.info(ele);
+			this.log.info(cronJob);
 			if(ele != this.jobId){
 				this.resetValues(this.namespace + "." + ele + this.additionalIds.reset,this.namespace.length,this.additionalIds.reset.length);
 			}
@@ -373,6 +376,12 @@ class DragIndicator extends utils.Adapter {
 					else{
 						this.activeStatesLastAdditionalValues[id] = state.val;
 						this.setForeignStateAsync(id,state.val,true);
+						if(id.substring(id.length - this.additionalIds.max.length) == this.additionalIds.max){
+							this.setForeignStateAsync(id.substring(0,id.length - this.additionalIds.max.length) + this.additionalIds.maxTime,Date.now(),true);
+						}
+						else if(id.substring(id.length - this.additionalIds.min.length) == this.additionalIds.min){
+							this.setForeignStateAsync(id.substring(0,id.length - this.additionalIds.min.length) + this.additionalIds.minTime,Date.now(),true);
+						}
 					}
 				}
 			}
