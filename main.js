@@ -8,6 +8,7 @@
 // you need to create an adapter
 const utils = require("@iobroker/adapter-core");
 const schedule = require("node-schedule");
+const { isDeepStrictEqual } = require("util");
 
 // Load your modules here, e.g.:
 // const fs = require("fs");
@@ -128,7 +129,7 @@ class DragIndicator extends utils.Adapter {
 			return;
 		}
 		this.activeStates[id] = {};
-
+		this.activeStates[id].customInfo = customInfo;
 		// Create adapter internal object
 		const tempId = this.createStatestring(id);
 		await this.setObjectAsync(tempId,{
@@ -272,41 +273,36 @@ class DragIndicator extends utils.Adapter {
 	async onObjectChange(id, obj) {
 		if (obj) {
 			try {
-				// Load configuration as provided in object
-				const stateInfo = await this.getForeignObjectAsync(id);
-				if (!stateInfo) {
-					this.log.error(`Can't get information for ${id}, state will be ignored`);
-					return;
-				} else
-				{
-					if(!stateInfo.common.custom || !stateInfo.common.custom[this.namespace]){
-						if(this.activeStates[id])
-						{
-							this.clearStateArrayElement(id,false);
-							return;
+				if(!obj.common.custom || !obj.common.custom[this.namespace]){
+					if(this.activeStates[id])
+					{
+						this.clearStateArrayElement(id,false);
+						return;
+					}
+				}
+				else{
+					const customInfo = obj.common.custom[this.namespace];
+					if(this.activeStates[id])
+					{
+						const state = await this.getForeignStateAsync(id);
+						if(state){
+							if(!isDeepStrictEqual(this.activeStates[id].customInfo,customInfo)){
+								this.log.info("Es wird bearbeitet");
+								this.removefromCronJob(this.activeStates[id].lastCronJob,id);
+								await this.addObjectAndCreateState(id,obj.common,customInfo,state,false);
+							}
 						}
 					}
-					else{
-						const customInfo = stateInfo.common.custom[this.namespace];
-						if(this.activeStates[id])
+					else
+					{
+						const state = await this.getForeignStateAsync(id);
+						if(state)
 						{
-							const state = await this.getForeignStateAsync(id);
-							if(state){
-								this.removefromCronJob(this.activeStates[id].lastCronJob,id);
-								await this.addObjectAndCreateState(id,stateInfo.common,customInfo,state,false);
-							}
+							this.addObjectAndCreateState(id,obj.common,customInfo,state,true);
 						}
 						else
 						{
-							const state = await this.getForeignStateAsync(id);
-							if(state)
-							{
-								this.addObjectAndCreateState(id,stateInfo.common,customInfo,state,true);
-							}
-							else
-							{
-								this.log.error(`could not read state ${id}`);
-							}
+							this.log.error(`could not read state ${id}`);
 						}
 					}
 				}
