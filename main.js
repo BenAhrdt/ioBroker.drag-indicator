@@ -327,8 +327,6 @@ class DragIndicator extends utils.Adapter {
 
 	resetWithCronJob(cronJob){
 		for(const ele in this.cronJobs[cronJob]){
-			this.log.info(ele);
-			this.log.info(cronJob);
 			if(ele != this.jobId){
 				this.resetValues(this.namespace + "." + ele + this.additionalIds.reset,this.namespace.length,this.additionalIds.reset.length);
 			}
