@@ -176,7 +176,12 @@ class DragIndicator extends utils.Adapter {
 				});
 				this.log.debug(`state ${tempId} added / activated`);
 				this.subscribeStates(tempId);
-				this.setState(tempId,Date.now(),true);
+
+				// write timestamp if its not undefined or null
+				const lastState = await this.getStateAsync(tempId);
+				if(lastState === undefined || lastState === null){
+					this.setState(tempId,Date.now(),true);
+				}
 			}
 			else{
 				await this.setObjectNotExistsAsync(tempId,{
@@ -194,8 +199,14 @@ class DragIndicator extends utils.Adapter {
 				});
 				this.log.debug(`state ${tempId} added / activated`);
 				this.subscribeStates(tempId);
-				this.activeStatesLastAdditionalValues[this.namespace + "." + tempId] = state.val;
-				this.setState(tempId,state.val,true);
+				const lastState = await this.getStateAsync(tempId);
+				if(lastState !== undefined && lastState !== null){
+					this.activeStatesLastAdditionalValues[this.namespace + "." + tempId] = lastState.val;
+				}
+				else{
+					this.activeStatesLastAdditionalValues[this.namespace + "." + tempId] = state.val;
+					this.setState(tempId,state.val,true);
+				}
 			}
 		}
 		if(customInfo.resetCronJob != ""){

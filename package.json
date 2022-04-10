@@ -1,6 +1,6 @@
 {
   "name": "iobroker.drag-indicator",
-  "version": "1.9.5",
+  "version": "1.10.5",
   "description": "Shows the min and max of a selected value",
   "author": {
     "name": "BenAhrdt",
