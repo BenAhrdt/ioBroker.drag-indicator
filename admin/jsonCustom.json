@@ -11,12 +11,14 @@
       "newLine": true,
       "type": "staticText",
       "text": "!!! Achtung, es können nur Datenpunkte vom Typ number ausgewählt werden",
+      "hidden": "customObj.common.type === 'number'",
       "sm": 12
     },
     "channelName": {
       "type": "text",
       "label": "Name",
       "tooltip": "Tragen Sie hier den Name des Datenpunkts ein, welcher später in dem übergeordnerten Verzeichnnis angezeigt werden soll.",
+      "hidden": "customObj.common.type !== 'number'",
       "sm":3
     },
     "resetCronJob": {
@@ -25,6 +27,7 @@
       "type": "cron",
       "label": "Automatischer Reset",
       "tooltip": "Tragen Sie hier den entsprechenden cronJob ein, bei welchem ein automatischer Reset erfolgen soll.",
+      "hidden": "customObj.common.type !== 'number'",
       "sm":6
     }
   }
