@@ -298,7 +298,6 @@ class DragIndicator extends utils.Adapter {
 						const state = await this.getForeignStateAsync(id);
 						if(state){
 							if(!isDeepStrictEqual(this.activeStates[id].customInfo,customInfo)){
-								this.log.info("Es wird bearbeitet");
 								this.removefromCronJob(this.activeStates[id].lastCronJob,id);
 								await this.addObjectAndCreateState(id,obj.common,customInfo,state,false);
 							}
