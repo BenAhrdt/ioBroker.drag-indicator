@@ -192,8 +192,7 @@ class DragIndicator extends utils.Adapter {
 						role: common.role,
 						unit: common.unit,
 						read: true,
-						write: true,
-						def: 0
+						write: true
 					},
 					native: {},
 				});
