@@ -34,9 +34,7 @@ class DragIndicator extends utils.Adapter {
 
 		this.additionalIds = {
 			max : ".max",
-			maxTime : ".maxTimestamp",
 			min : ".min",
-			minTime : ".minTimestamp",
 			reset : ".reset"
 		};
 
@@ -160,28 +158,6 @@ class DragIndicator extends utils.Adapter {
 				this.subscribeStates(tempId);
 				this.activeStatesLastAdditionalValues[this.namespace + "." + tempId] = id;
 				this.setState(tempId,false,true);
-			}
-			else if(this.additionalIds[myId] == this.additionalIds.maxTime || this.additionalIds[myId] == this.additionalIds.minTime){
-				await this.setObjectNotExistsAsync(tempId,{
-					type: "state",
-					common: {
-						name: myId,
-						type: "number",
-						role: "timestamp",
-						read: true,
-						write: false,
-						def: Date.now()
-					},
-					native: {},
-				});
-				this.log.debug(`state ${tempId} added / activated`);
-				this.subscribeStates(tempId);
-
-				// write timestamp if its not undefined or null
-				const lastState = await this.getStateAsync(tempId);
-				if(lastState === undefined || lastState === null){
-					this.setState(tempId,Date.now(),true);
-				}
 			}
 			else{
 				await this.setObjectNotExistsAsync(tempId,{
@@ -353,7 +329,6 @@ class DragIndicator extends utils.Adapter {
 						const tempValue = state.val;
 						this.activeStatesLastAdditionalValues[this.namespace + "." + tempId] = tempValue;
 						this.setStateAsync(tempId,tempValue,true);
-						this.setStateAsync(this.createStatestring(id) + this.additionalIds.maxTime,Date.now(),true);
 					}
 					else{
 						tempId = this.createStatestring(id) + this.additionalIds.min;
@@ -361,7 +336,6 @@ class DragIndicator extends utils.Adapter {
 							const tempValue = state.val;
 							this.activeStatesLastAdditionalValues[this.namespace + "." + tempId] = tempValue;
 							this.setStateAsync(tempId,tempValue,true);
-							this.setStateAsync(this.createStatestring(id) + this.additionalIds.minTime,Date.now(),true);
 						}
 					}
 				}
@@ -385,12 +359,6 @@ class DragIndicator extends utils.Adapter {
 					else{
 						this.activeStatesLastAdditionalValues[id] = state.val;
 						this.setForeignStateAsync(id,state.val,true);
-						if(id.substring(id.length - this.additionalIds.max.length) == this.additionalIds.max){
-							this.setForeignStateAsync(id.substring(0,id.length - this.additionalIds.max.length) + this.additionalIds.maxTime,Date.now(),true);
-						}
-						else if(id.substring(id.length - this.additionalIds.min.length) == this.additionalIds.min){
-							this.setForeignStateAsync(id.substring(0,id.length - this.additionalIds.min.length) + this.additionalIds.minTime,Date.now(),true);
-						}
 					}
 				}
 			}
@@ -408,10 +376,8 @@ class DragIndicator extends utils.Adapter {
 		if(curState){
 			this.activeStatesLastAdditionalValues[this.namespace + "." + subId + this.additionalIds.max] = curState.val;
 			this.setStateAsync(subId + this.additionalIds.max,curState.val,true);
-			this.setStateAsync(subId + this.additionalIds.maxTime,Date.now(),true);
 			this.activeStatesLastAdditionalValues[this.namespace +  "." + subId + this.additionalIds.min] = curState.val;
 			this.setStateAsync(subId + this.additionalIds.min,curState.val,true);
-			this.setStateAsync(subId + this.additionalIds.minTime,Date.now(),true);
 		}
 	}
 	// If you need to accept messages in your adapter, uncomment the following block and the corresponding line in the constructor.
