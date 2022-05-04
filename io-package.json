@@ -1,7 +1,7 @@
 {
 	"common": {
 		"name": "drag-indicator",
-		"version": "1.13.6",
+		"version": "1.14.6",
 		"news": {
 			"0.0.1": {
 				"en": "initial release",
