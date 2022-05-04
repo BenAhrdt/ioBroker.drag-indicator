@@ -1,8 +1,12 @@
 {
 	"common": {
 		"name": "drag-indicator",
-		"version": "1.14.6",
+		"version": "1.14.7",
 		"news": {
+			"1.14.7":{
+				"en": "first official iobroker version",
+				"de": "Erste offizielle iobroker Version"
+			},
 			"0.0.1": {
 				"en": "initial release",
 				"de": "Erstveröffentlichung",
