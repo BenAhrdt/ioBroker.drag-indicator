@@ -1,0 +1,10 @@
+{
+    "justTypeNumber": "Let op, alleen datapunten van typenummer kunnen worden geselecteerd",
+    "valueName": "naam",
+    "valueNameTooltip": "plaats de naam van de staat, die later in de kanaalmap wordt weergegeven.",
+    "deleteStateWithDisableText": "status verwijderen met uitschakelen",
+    "infoToCustomConfiglabel": "doe configuratie in aangepaste configuratie van een staat",
+    "dragindicatorSettings": "instellingen voor sleepindicator",
+    "automaticReset": "automatische reset",
+    "automaticResetTooltip": "plaats de gewenste cronJob, die automatisch de sleep-indicator reset."
+}

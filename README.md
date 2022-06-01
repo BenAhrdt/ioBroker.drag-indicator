@@ -4,10 +4,8 @@
 ## drag-indicator adapter for ioBroker
 
 Shows the min and max of a selected value (of type number)
-
-### Best Practices
-We've collected some [best practices](https://github.com/ioBroker/ioBroker.repositories#development-and-coding-best-practices) regarding ioBroker development and coding in general. If you're new to ioBroker or Node.js, you should
-check them out. If you're already experienced, you should also take a look at them - you might learn something new :)
+So you can catch the extreme values of an state in a desired timerange.
+e.g. you can use it for power or temperature values.
 
 ## Changelog
 <!--
@@ -15,11 +13,11 @@ check them out. If you're already experienced, you should also take a look at th
 	### **WORK IN PROGRESS**
 -->
 
-### **1.14.6**
-* (BenAhrdt) first official version
+### **1.14.8**
+* (BenAhrdt) change setForeignState to setState to write internal States
 
-### **WORK IN PROGRESS**
-* (BenAhrdt) initial release
+### **1.14.7**
+* (BenAhrdt) first official version
 
 ## License
 MIT License

@@ -1,0 +1,10 @@
+{
+    "justTypeNumber": "Uwaga, można wybrać tylko punkty danych o numerze typu",
+    "valueName": "Nazwa",
+    "valueNameTooltip": "wstaw nazwę stanu, która będzie później wyświetlana w folderze kanału.",
+    "deleteStateWithDisableText": "usuń stan z wyłączonym",
+    "infoToCustomConfiglabel": "wykonaj konfigurację w custom-config stanu",
+    "dragindicatorSettings": "ustawienia dragindicatora",
+    "automaticReset": "automatyczny reset",
+    "automaticResetTooltip": "wstaw żądany cronJob, który automatycznie zresetuje wskaźnik przeciągania."
+}

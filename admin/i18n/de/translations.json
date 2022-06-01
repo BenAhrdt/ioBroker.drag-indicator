@@ -1,0 +1,10 @@
+{
+    "justTypeNumber": "Achtung, es können nur Datenpunkte vom Typ Nummer ausgewählt werden",
+    "valueName": "Name",
+    "valueNameTooltip": "Geben Sie den Namen des States ein, der später im channel Ordner angezeigt wird.",
+    "deleteStateWithDisableText": "State löschen mit deaktivieren",
+    "infoToCustomConfiglabel": "Konfiguration in der benutzerdefinierten Konfiguration eines Zustands vornehmen",
+    "dragindicatorSettings": "DragIndicator-Einstellungen",
+    "automaticReset": "automatischer Reset",
+    "automaticResetTooltip": "Stellen Sie den gewünschten CronJob ein, der den Schleppzeiger automatisch zurücksetzt."
+}

@@ -4,20 +4,20 @@
     "_basicSettings": {
       "newLine": true,
       "type": "header",
-      "text": "Schleppzeigereinstellungen",
+      "text": "dragindicatorSetting",
       "sm": 20
     },
     "warningText": {
       "newLine": true,
       "type": "staticText",
-      "text": "!!! Achtung, es können nur Datenpunkte vom Typ number ausgewählt werden",
+      "text": "justTypeNumber",
       "hidden": "customObj.common.type === 'number'",
       "sm": 12
     },
     "channelName": {
       "type": "text",
-      "label": "Name",
-      "tooltip": "Tragen Sie hier den Name des Datenpunkts ein, welcher später in dem übergeordnerten Verzeichnnis angezeigt werden soll.",
+      "label": "valueName",
+      "tooltip": "valueNameTooltip",
       "hidden": "customObj.common.type !== 'number'",
       "sm":3
     },
@@ -25,8 +25,8 @@
       "newLine": true,
       "simple": true,
       "type": "cron",
-      "label": "Automatischer Reset",
-      "tooltip": "Tragen Sie hier den entsprechenden cronJob ein, bei welchem ein automatischer Reset erfolgen soll.",
+      "label": "automaticReset",
+      "tooltip": "automaticResetTooltip",
       "hidden": "customObj.common.type !== 'number'",
       "sm":6
     }

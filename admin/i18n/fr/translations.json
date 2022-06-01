@@ -1,0 +1,10 @@
+{
+    "justTypeNumber": "Attention, seuls les points de données de numéro de type peuvent être sélectionnés",
+    "valueName": "Nom",
+    "valueNameTooltip": "insérez le nom de l'état, qui sera affiché dans le dossier du canal plus tard.",
+    "deleteStateWithDisableText": "supprimer l'état avec désactiver",
+    "infoToCustomConfiglabel": "faire la configuration dans la configuration personnalisée d'un état",
+    "dragindicatorSettings": "paramètres de l'indicateur de glissement",
+    "automaticReset": "réinitialisation automatique",
+    "automaticResetTooltip": "insérez le cronJob souhaité, qui réinitialise automatiquement l'indicateur de traînée."
+}

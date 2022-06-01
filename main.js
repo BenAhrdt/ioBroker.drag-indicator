@@ -52,8 +52,6 @@ class DragIndicator extends utils.Adapter {
 	 */
 	async onReady() {
 		// Initialize your adapter here
-		// Reset the connection indicator during startup
-		this.setState("info.connection", false, true);
 
 		// Creates the subscribed state count
 		await this.setObjectNotExistsAsync(this.subscribecounterId, {
@@ -95,7 +93,6 @@ class DragIndicator extends utils.Adapter {
 
 		this.subscribeForeignObjects("*");
 		this.setState(this.subscribecounterId,this.subscribecounter,true);
-		this.setState("info.connection", true, true);
 	}
 
 	/**
@@ -340,7 +337,7 @@ class DragIndicator extends utils.Adapter {
 					}
 				}
 
-				// Check Changes in interneal States
+				// Check Changes in internal States
 				else if(this.activeStatesLastAdditionalValues[id] !== undefined && this.activeStatesLastAdditionalValues[id] !== null && !state.ack){
 					const extentionLength = this.additionalIds.reset.length;
 					const extention = id.substring(id.length - extentionLength);
@@ -350,15 +347,15 @@ class DragIndicator extends utils.Adapter {
 						// check that reset is true
 						if(state.val == true){
 							this.resetValues(id,prefixLengt,extentionLength);
-							this.setForeignStateAsync(id,true,true);
+							this.setStateAsync(id,true,true);
 						}
 						else{
-							this.setForeignStateAsync(id,false,true);
+							this.setStateAsync(id,false,true);
 						}
 					}
 					else{
 						this.activeStatesLastAdditionalValues[id] = state.val;
-						this.setForeignStateAsync(id,state.val,true);
+						this.setStateAsync(id,state.val,true);
 					}
 				}
 			}
