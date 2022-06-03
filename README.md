@@ -13,10 +13,13 @@ e.g. you can use it for power or temperature values.
 	### **WORK IN PROGRESS**
 -->
 
-### **1.14.8**
+### 1.14.9
+* (BenAhrdt) fixed some changes in readme
+
+### 1.14.8
 * (BenAhrdt) change setForeignState to setState to write internal States
 
-### **1.14.7**
+### 1.14.7
 * (BenAhrdt) first official version
 
 ## License
