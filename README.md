@@ -1,6 +1,16 @@
 ![Logo](admin/drag-indicator.png)
 # ioBroker.drag-indicator
 
+[![NPM version](https://img.shields.io/npm/v/iobroker.janitza-gridvis.svg)](https://www.npmjs.com/package/iobroker.drag-indicator)
+[![Downloads](https://img.shields.io/npm/dm/iobroker.janitza-gridvis.svg)](https://www.npmjs.com/package/iobroker.drag-indicator)
+![Number of Installations](https://iobroker.live/badges/drag-indicator-installed.svg)
+![Current version in stable repository](https://iobroker.live/badges/drag-indicator-stable.svg)
+[![Dependency Status](https://img.shields.io/david/BenAhrdt/iobroker.janitza-gridvis.svg)](https://david-dm.org/BenAhrdt/iobroker.drag-indicator)
+
+[![NPM](https://nodei.co/npm/iobroker.janitza-gridvis.png?downloads=true)](https://nodei.co/npm/iobroker.drag-indicator/)
+
+**Tests:** ![Test and Release](https://github.com/BenAhrdt/ioBroker.drag-indicator/workflows/Test%20and%20Release/badge.svg)
+
 ## drag-indicator adapter for ioBroker
 
 Shows the min and max of a selected value (of type number)
@@ -12,6 +22,9 @@ e.g. you can use it for power or temperature values.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+* (BenAhrdt) deploy implemented
 
 ### 1.14.9
 * (BenAhrdt) fixed some changes in readme
