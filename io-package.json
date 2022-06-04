@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "drag-indicator",
-        "version": "1.14.9",
+        "version": "2.0.0",
         "news": {
+            "2.0.0": {
+                "en": "deploy implemented",
+                "de": "bereitstellen implementiert",
+                "ru": "развертывание реализовано",
+                "pt": "implantar implementado",
+                "nl": "implementeren geïmplementeerd",
+                "fr": "déployer mis en œuvre",
+                "it": "distribuzione implementata",
+                "es": "desplegar implementado",
+                "pl": "wdrożenie wdrożone",
+                "zh-cn": "部署实施"
+            },
             "1.14.9": {
                 "en": "readme fixed",
                 "de": "Readme behoben",
