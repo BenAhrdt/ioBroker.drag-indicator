@@ -228,11 +228,14 @@ class DragIndicator extends utils.Adapter {
 		if(this.activeStates[id]){
 			this.removefromCronJob(this.activeStates[id].lastCronJob,id);
 			delete this.activeStates[id];
+			this.subscribecounter -= 1;
+			this.setState(this.subscribecounterId,this.subscribecounter,true);
 			if(!this.activeStatesLastAdditionalValues[id]){ // Dont unsubscribe in case of is additional value
 				this.unsubscribeForeignStates(id);
 				this.log.debug(`state ${id} not longer subscribed`);
-				this.subscribecounter -= 1;
-				this.setState(this.subscribecounterId,this.subscribecounter,true);
+			}
+			else{
+				this.log.debug(`state ${id} not longer subscribed as active state, but still as additional`);
 			}
 		}
 		if(this.config.deleteStatesWithDisable || deleteState){
