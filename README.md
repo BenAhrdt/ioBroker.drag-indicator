@@ -23,6 +23,9 @@ e.g. you can use it for power or temperature values.
 	### **WORK IN PROGRESS**
 -->
 
+### **WORK IN PROGRESS** - Bugfix unsubscribe additional value
+* (BenAhrdt) Do not unsubscribe additional values with deaktivate object
+
 ### 2.0.0 (2022-06-04)
 * (BenAhrdt) deploy implemented
 

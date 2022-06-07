@@ -227,11 +227,13 @@ class DragIndicator extends utils.Adapter {
 		// Unsubscribe and delete states if exists
 		if(this.activeStates[id]){
 			this.removefromCronJob(this.activeStates[id].lastCronJob,id);
-			this.unsubscribeForeignStates(id);
-			this.log.debug(`state ${id} not longer subscribed`);
 			delete this.activeStates[id];
-			this.subscribecounter -= 1;
-			this.setState(this.subscribecounterId,this.subscribecounter,true);
+			if(!this.activeStatesLastAdditionalValues[id]){ // Dont unsubscribe in case of is additional value
+				this.unsubscribeForeignStates(id);
+				this.log.debug(`state ${id} not longer subscribed`);
+				this.subscribecounter -= 1;
+				this.setState(this.subscribecounterId,this.subscribecounter,true);
+			}
 		}
 		if(this.config.deleteStatesWithDisable || deleteState){
 			for(const myId in this.additionalIds){
@@ -255,6 +257,7 @@ class DragIndicator extends utils.Adapter {
 
 	async onObjectChange(id, obj) {
 		if (obj) {
+			this.log.info("Object");
 			try {
 				if(!obj.common.custom || !obj.common.custom[this.namespace]){
 					if(this.activeStates[id])
