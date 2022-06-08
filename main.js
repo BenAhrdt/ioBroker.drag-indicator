@@ -355,14 +355,10 @@ class DragIndicator extends utils.Adapter {
 							this.setStateAsync(tempId,tempValue,true);
 						}
 					}
-					// check state for additional values and write it back with ack = true
-					if(this.activeStatesLastAdditionalValues[id] && !state.ack){
-						this.setStateAsync(id,state.val,true);
-					}
 				}
 
-				// Check Changes in internal States
-				else if(this.activeStatesLastAdditionalValues[id] !== undefined && this.activeStatesLastAdditionalValues[id] !== null && !state.ack){
+				// Check Changes in internal States (also if id is active state)
+				if(this.activeStatesLastAdditionalValues[id] !== undefined && this.activeStatesLastAdditionalValues[id] !== null && !state.ack){
 					const extentionLength = this.additionalIds.reset.length;
 					const extention = id.substring(id.length - extentionLength);
 					const prefixLengt = this.namespace.length;
