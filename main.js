@@ -274,7 +274,6 @@ class DragIndicator extends utils.Adapter {
 
 	async onObjectChange(id, obj) {
 		if (obj) {
-			this.log.info("Object");
 			try {
 				if(!obj.common.custom || !obj.common.custom[this.namespace]){
 					if(this.activeStates[id])
