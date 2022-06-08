@@ -23,7 +23,7 @@ e.g. you can use it for power or temperature values.
 	### **WORK IN PROGRESS**
 -->
 
-### **WORK IN PROGRESS** - rewrite additional state with ack true
+### 2.0.2 (2022-06-08) - rewrite additional state with ack true
 * (BenAhrdt) write ack = true in case of additional state is subscribed
 
 ### 2.0.1 (2022-06-08) - Bugfix unsubscribe additional value
