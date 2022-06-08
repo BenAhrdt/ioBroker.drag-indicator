@@ -355,6 +355,10 @@ class DragIndicator extends utils.Adapter {
 							this.setStateAsync(tempId,tempValue,true);
 						}
 					}
+					// check state for additional values and write it back with ack = true
+					if(this.activeStatesLastAdditionalValues[id] && !state.ack){
+						this.setStateAsync(id,state.val,true);
+					}
 				}
 
 				// Check Changes in internal States

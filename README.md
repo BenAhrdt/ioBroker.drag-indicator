@@ -23,6 +23,9 @@ e.g. you can use it for power or temperature values.
 	### **WORK IN PROGRESS**
 -->
 
+### **WORK IN PROGRESS** - rewrite additional state with ack true
+* (BenAhrdt) write ack = true in case of additional state is subscribed
+
 ### 2.0.1 (2022-06-08) - Bugfix unsubscribe additional value
 * (BenAhrdt) Do not unsubscribe additional values with deactivate object
 
