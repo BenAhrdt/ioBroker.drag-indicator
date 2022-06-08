@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "drag-indicator",
-        "version": "2.0.0",
+        "version": "2.0.1",
         "news": {
+            "2.0.1": {
+                "en": "Do not unsubscribe additional values with deactivate object",
+                "de": "Abmelden Sie zusätzliche Werte nicht mit deaktiviertem Objekt",
+                "ru": "Не отписывайте дополнительные значения с деактивируемым объектом",
+                "pt": "Não cancelar a assinatura de valores adicionais com objeto desativado",
+                "nl": "Beschrijf geen extra waarden met deactive",
+                "fr": "Ne pas désabonner des valeurs supplémentaires avec objet désactivé",
+                "it": "Non cancellare i valori aggiuntivi con oggetto disattivato",
+                "es": "No descríbete valores adicionales con objeto desactivado",
+                "pl": "Niepodpisuje dodatkowych wartości z deaktywacją obiektów",
+                "zh-cn": "未用其他价值加以限制"
+            },
             "2.0.0": {
                 "en": "deploy implemented",
                 "de": "bereitstellen implementiert",
