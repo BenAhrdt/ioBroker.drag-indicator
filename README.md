@@ -23,6 +23,9 @@ e.g. you can use it for power or temperature values.
 	### **WORK IN PROGRESS**
 -->
 
+### **WORK IN PROGRESS** - adapter type changed
+* (BenAhrdt) adapter type changed to misc-data
+
 ### 2.0.2 (2022-06-08) - rewrite additional state with ack true
 * (BenAhrdt) write ack = true in case of additional state is subscribed
 
