@@ -163,6 +163,19 @@
                 "name": "Information"
             },
             "native": {}
+        },
+        {
+            "_id": "info.subscribedStatesCount",
+            "type": "state",
+            "common": {
+                "role": "indicator",
+                "name": "Count of subscribed states",
+                "type": "number",
+                "read": true,
+                "write": false,
+                "def": 0
+            },
+            "native": {}
         }
     ]
 }
