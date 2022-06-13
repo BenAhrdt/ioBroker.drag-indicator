@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "drag-indicator",
-        "version": "2.0.2",
+        "version": "2.0.3",
         "news": {
+            "2.0.3": {
+                "en": "adapter type changed to misc-data",
+                "de": "adaptertyp geändert in misc-daten",
+                "ru": "тип адаптера изменен на misc-data",
+                "pt": "tipo de adaptador alterado para misc-data",
+                "nl": "adaptertype veranderde in misc-data",
+                "fr": "type d'adaptateur changé en misc-data",
+                "it": "tipo di adattatore cambiato in misc-data",
+                "es": "tipo de adaptador cambiado a misc-data",
+                "pl": "zmiana adaptatora została zmieniona na misc-data",
+                "zh-cn": "b. 适应类型改为错误数据"
+            },
             "2.0.2": {
                 "en": "write ack = true in case of additional state is subscribed",
                 "de": "schreiben ack = wahr bei zusätzlichem zustand abonniert",
