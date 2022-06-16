@@ -23,6 +23,9 @@ e.g. you can use it for power or temperature values.
 	### **WORK IN PROGRESS**
 -->
 
+### **WORK IN PROGRESS** - loglevel check deleted
+* (BenAhrdt) dont check loglevel before log.debug()
+
 ### 2.0.3 (2022-06-13) - adapter type changed
 * (BenAhrdt) adapter type changed to misc-data
 
