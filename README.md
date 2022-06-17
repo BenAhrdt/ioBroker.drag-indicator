@@ -1,13 +1,13 @@
 ![Logo](admin/drag-indicator.png)
 # ioBroker.drag-indicator
 
-[![NPM version](https://img.shields.io/npm/v/iobroker.janitza-gridvis.svg)](https://www.npmjs.com/package/iobroker.drag-indicator)
-[![Downloads](https://img.shields.io/npm/dm/iobroker.janitza-gridvis.svg)](https://www.npmjs.com/package/iobroker.drag-indicator)
+[![NPM version](https://img.shields.io/npm/v/iobroker.drag-indicator.svg)](https://www.npmjs.com/package/iobroker.drag-indicator)
+[![Downloads](https://img.shields.io/npm/dm/iobroker.drag-indicator.svg)](https://www.npmjs.com/package/iobroker.drag-indicator)
 ![Number of Installations](https://iobroker.live/badges/drag-indicator-installed.svg)
 ![Test and Release](https://github.com/BenAhrdt/ioBroker.drag-indicator/workflows/Test%20and%20Release/badge.svg)
 [![Donate](https://img.shields.io/badge/paypal-donate%20|%20spenden-blue.svg)](https://paypal.me/besc83)
 
-[![NPM](https://nodei.co/npm/iobroker.janitza-gridvis.png?downloads=true)](https://nodei.co/npm/iobroker.drag-indicator/)
+[![NPM](https://nodei.co/npm/iobroker.drag-indicator.png?downloads=true)](https://nodei.co/npm/iobroker.drag-indicator/)
 
 
 ## drag-indicator adapter for ioBroker
