@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "drag-indicator",
-        "version": "2.0.4",
+        "version": "2.0.5",
         "news": {
+            "2.0.5": {
+                "en": "implemented paypal and sort readme",
+                "de": "implementiert paypal und sort readme",
+                "ru": "реализовано paypal и сортировать readme",
+                "pt": "implementado paypal e tipo readme",
+                "nl": "vertaling:",
+                "fr": "implémenté paypal et tri readme",
+                "it": "implementato paypal e ordina letto",
+                "es": "implementado paypal y tipo readme",
+                "pl": "zaimplementowany i odczytywany",
+                "zh-cn": "执行的薪资和一读"
+            },
             "2.0.4": {
                 "en": "dont check loglevel before log.debug()",
                 "de": "nicht loglevel vor log.debug überprüfen(",

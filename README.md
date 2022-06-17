@@ -22,7 +22,7 @@ e.g. you can use it for power or temperature values.
 	### **WORK IN PROGRESS**
 -->
 
-### **WORK IN PROGRESS** - paypal implemented
+### 2.0.5 (2022-06-17) - paypal implemented
 * (BenAhrdt) implemented paypal and sort readme
 
 ### 2.0.4 (2022-06-16) - loglevel check deleted
