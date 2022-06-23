@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "drag-indicator",
-        "version": "2.0.5",
+        "version": "2.0.6",
         "news": {
+            "2.0.6": {
+                "en": "comment some lines for better undestanding",
+                "de": "kommentieren einige zeilen für besseres unverständnis",
+                "ru": "прокомментировать некоторые строки для лучшего непонимания",
+                "pt": "comentar algumas linhas para melhor imparcial",
+                "nl": "een paar lijnen voor beter onverslaanbaar",
+                "fr": "commenter certaines lignes pour une meilleure",
+                "it": "commentare alcune linee per meglio incomprensibile",
+                "es": "comentar algunas líneas para mejor indecente",
+                "pl": "skomentować",
+                "zh-cn": "评 注"
+            },
             "2.0.5": {
                 "en": "implemented paypal and sort readme",
                 "de": "implementiert paypal und sort readme",

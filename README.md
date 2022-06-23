@@ -22,7 +22,7 @@ e.g. you can use it for power or temperature values.
 	### **WORK IN PROGRESS**
 -->
 
-### **WORK IN PROGRESS** - comments added
+### 2.0.6 (2022-06-23) - comments added
 * (BenAhrdt) comment some lines for better undestanding
 
 ### 2.0.5 (2022-06-17) - paypal implemented
