@@ -22,6 +22,9 @@ e.g. you can use it for power or temperature values.
 	### **WORK IN PROGRESS**
 -->
 
+### **WORK IN PROGRESS** - comments added
+* (BenAhrdt) comment some lines for better undestanding
+
 ### 2.0.5 (2022-06-17) - paypal implemented
 * (BenAhrdt) implemented paypal and sort readme
 

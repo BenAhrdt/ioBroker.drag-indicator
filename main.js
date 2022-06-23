@@ -167,7 +167,7 @@ class DragIndicator extends utils.Adapter {
 				}
 			}
 		}
-		if(customInfo.resetCronJob != ""){
+		if(customInfo.resetCronJob != ""){ // check that ther is a cronjob configured
 			if(!this.cronJobs[customInfo.resetCronJob]){
 				this.cronJobs[customInfo.resetCronJob] = {};
 				this.cronJobs[customInfo.resetCronJob][this.jobId] = schedule.scheduleJob(customInfo.resetCronJob,this.resetWithCronJob.bind(this,customInfo.resetCronJob));
