@@ -22,6 +22,9 @@ e.g. you can use it for power or temperature values.
 	### **WORK IN PROGRESS**
 -->
 
+### **WORK IN PROGRESS** - cronjob updated to complex mode
+* (BenAhrdt) cronjob wizard removed and complex mode enabled
+
 ### **WORK IN PROGRESS** - cronjob updated
 * (BenAhrdt) cronjob wizard implemented (FeGo)
 

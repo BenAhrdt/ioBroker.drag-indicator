@@ -24,6 +24,7 @@
     "resetCronJob": {
       "newLine": true,
       "type": "cron",
+      "complex": true,
       "label": "automaticReset",
       "tooltip": "automaticResetTooltip",
       "hidden": "customObj.common.type !== 'number'",

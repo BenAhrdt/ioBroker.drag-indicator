@@ -170,16 +170,7 @@ class DragIndicator extends utils.Adapter {
 		if(customInfo.resetCronJob != ""){ // check that ther is a cronjob configured
 			if(!this.cronJobs[customInfo.resetCronJob]){
 				this.cronJobs[customInfo.resetCronJob] = {};
-				// Cronjob je nach art des cronJobs parsen
-				let cronJob = "";
-				try{
-					cronJob = JSON.parse(customInfo.resetCronJob);
-				}
-				catch(error){
-					cronJob = customInfo.resetCronJob;
-				}
-				//this.cronJobs[customInfo.resetCronJob][this.jobId] = schedule.scheduleJob(customInfo.resetCronJob,this.resetWithCronJob.bind(this,customInfo.resetCronJob));
-				this.cronJobs[customInfo.resetCronJob][this.jobId] = schedule.scheduleJob(cronJob,this.resetWithCronJob.bind(this,customInfo.resetCronJob));
+				this.cronJobs[customInfo.resetCronJob][this.jobId] = schedule.scheduleJob(customInfo.resetCronJob,this.resetWithCronJob.bind(this,customInfo.resetCronJob));
 			}
 			this.cronJobs[customInfo.resetCronJob][this.createStatestring(id)] = {};
 			this.activeStates[id].lastCronJob = customInfo.resetCronJob;
