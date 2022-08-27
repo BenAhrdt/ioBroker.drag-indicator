@@ -23,7 +23,6 @@
     },
     "resetCronJob": {
       "newLine": true,
-      "simple": true,
       "type": "cron",
       "label": "automaticReset",
       "tooltip": "automaticResetTooltip",

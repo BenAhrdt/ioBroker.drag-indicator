@@ -22,6 +22,9 @@ e.g. you can use it for power or temperature values.
 	### **WORK IN PROGRESS**
 -->
 
+### **WORK IN PROGRESS** - cronjob updated
+* (BenAhrdt) cronjob wizard implemented
+
 ### 2.0.6 (2022-06-23) - comments added
 * (BenAhrdt) comment some lines for better undestanding
 
