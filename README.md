@@ -22,6 +22,9 @@ e.g. you can use it for power or temperature values.
 	### **WORK IN PROGRESS**
 -->
 
+### **WORK IN PROGRESS** - update new release script
+* (BenAhrdt) updated to release script V3
+
 ### 2.0.7 (2022-08-28) - cronjob updated to complex mode
 * (BenAhrdt) cronjob wizard removed and complex mode enabled
 
