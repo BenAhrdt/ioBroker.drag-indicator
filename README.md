@@ -22,6 +22,9 @@ e.g. you can use it for power or temperature values.
 	### **WORK IN PROGRESS**
 -->
 
+### 2.0.8 (2022-08-28) - release script installed
+* (BenAhrdt) updated to release script V3
+
 ### 2.0.8 (2022-08-28) - update new release script
 * (BenAhrdt) updated to release script V3
 
