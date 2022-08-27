@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "drag-indicator",
-        "version": "2.0.6",
+        "version": "2.0.7",
         "news": {
+            "2.0.7": {
+                "en": "cronjob wizard removed and complex mode enabled",
+                "de": "cronjob assistent entfernt und komplexer modus aktiviert",
+                "ru": "cronjob wizard удален и комплексный режим включен",
+                "pt": "assistente cronjob removido e modo complexo habilitado",
+                "nl": "quality over quantity (qoq) releases vertaling:",
+                "fr": "cronjob wizard enlevé et mode complexe activé",
+                "it": "mago di cronjob rimosso e modalità complessa abilitata",
+                "es": "asistente de cronjob eliminado y modo complejo habilitado",
+                "pl": "cronjob wizard usunął i złożony tryb pozwalał usunąć się",
+                "zh-cn": "被撤职和复杂模式的复杂化"
+            },
             "2.0.6": {
                 "en": "comment some lines for better undestanding",
                 "de": "kommentieren einige zeilen für besseres unverständnis",
