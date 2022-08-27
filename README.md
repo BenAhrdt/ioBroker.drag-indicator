@@ -21,8 +21,7 @@ e.g. you can use it for power or temperature values.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS** - release script installed
+### 2.0.9 (2022-08-27) - release script installed
 * (BenAhrdt) updated to release script V3
 
 ### 2.0.8 (2022-08-28) - update new release script
