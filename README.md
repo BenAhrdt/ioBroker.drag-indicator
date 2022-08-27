@@ -22,7 +22,7 @@ e.g. you can use it for power or temperature values.
 	### **WORK IN PROGRESS**
 -->
 
-### **WORK IN PROGRESS** - update new release script
+### 2.0.8 (2022-08-28) - update new release script
 * (BenAhrdt) updated to release script V3
 
 ### 2.0.7 (2022-08-28) - cronjob updated to complex mode

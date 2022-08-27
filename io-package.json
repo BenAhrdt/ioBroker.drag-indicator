@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "drag-indicator",
-        "version": "2.0.7",
+        "version": "2.0.8",
         "news": {
+            "2.0.8": {
+                "en": "updated to release script V3",
+                "de": "aktualisiert zum Release-Skript V3",
+                "ru": "обновлено для выпуска скрипта V3",
+                "pt": "atualizado para lançar script V3",
+                "nl": "vertaling:",
+                "fr": "mise à jour du script V3",
+                "it": "aggiornato allo script di rilascio V3",
+                "es": "actualizado para lanzar script V3",
+                "pl": "uaktualnianie scenariusza V3",
+                "zh-cn": "附录五3"
+            },
             "2.0.7": {
                 "en": "cronjob wizard removed and complex mode enabled",
                 "de": "cronjob assistent entfernt und komplexer modus aktiviert",
