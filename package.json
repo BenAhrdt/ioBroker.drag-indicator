@@ -19,7 +19,7 @@
     "url": "https://github.com/BenAhrdt/ioBroker.drag-indicator"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^2.6.0",
+    "@iobroker/adapter-core": "^2.6.6",
     "node-schedule": "^2.1.0"
   },
   "devDependencies": {
