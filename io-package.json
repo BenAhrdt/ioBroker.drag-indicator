@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "drag-indicator",
-    "version": "2.0.9",
+    "version": "2.1.0",
     "news": {
+      "2.1.0": {
+        "en": "depencies updated",
+        "de": "depene aktualisiert",
+        "ru": "частоты обновлены",
+        "pt": "competências atualizadas",
+        "nl": "_",
+        "fr": "depencies updated",
+        "it": "spese aggiornate",
+        "es": "depencies updated",
+        "pl": "depozyty",
+        "uk": "depencies оновлений",
+        "zh-cn": "最新资料"
+      },
       "2.0.9": {
         "en": "updated to release script V3",
         "de": "aktualisiert zum Release-Skript V3",
@@ -74,18 +87,6 @@
         "es": "no comprueba el nivel de registro antes de log.debug)(",
         "pl": "profil na stronie logline (ang.)",
         "zh-cn": "固体检查在逻辑前的逻辑水平(debug)"
-      },
-      "2.0.3": {
-        "en": "adapter type changed to misc-data",
-        "de": "adaptertyp geändert in misc-daten",
-        "ru": "тип адаптера изменен на misc-data",
-        "pt": "tipo de adaptador alterado para misc-data",
-        "nl": "adaptertype veranderde in misc-data",
-        "fr": "type d'adaptateur changé en misc-data",
-        "it": "tipo di adattatore cambiato in misc-data",
-        "es": "tipo de adaptador cambiado a misc-data",
-        "pl": "zmiana adaptatora została zmieniona na misc-data",
-        "zh-cn": "b. 适应类型改为错误数据"
       }
     },
     "title": "Drag-Indicator",
