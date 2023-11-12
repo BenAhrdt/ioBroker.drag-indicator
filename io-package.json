@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "drag-indicator",
-    "version": "2.1.1",
+    "version": "2.1.2",
     "news": {
+      "2.1.2": {
+        "en": "insert check vor node version >= 16",
+        "de": "kontrollieren vor knoten version >= anhang",
+        "ru": "вставить проверить vor node версия >= 16, 16, 16",
+        "pt": "insert check vor node version >= 16",
+        "nl": "insert check vor node versie 16",
+        "fr": "insert check vor node version phy= 16",
+        "it": ">= 16",
+        "es": "introducir ver la versión del nodo vor 16",
+        "pl": "instrukcja wejściowa w wersji węzłowej >== 16",
+        "uk": "вставити перевірку вихрового вузла версії >= 16 мар",
+        "zh-cn": "加 检查 16"
+      },
       "2.1.1": {
         "en": "correction in jsonconfig schema",
         "de": "korrektur im jsonconfig schema",
@@ -76,18 +89,6 @@
         "es": "comentar algunas líneas para mejor indecente",
         "pl": "skomentować",
         "zh-cn": "评 注"
-      },
-      "2.0.5": {
-        "en": "implemented paypal and sort readme",
-        "de": "implementiert paypal und sort readme",
-        "ru": "реализовано paypal и сортировать readme",
-        "pt": "implementado paypal e tipo readme",
-        "nl": "vertaling:",
-        "fr": "implémenté paypal et tri readme",
-        "it": "implementato paypal e ordina letto",
-        "es": "implementado paypal y tipo readme",
-        "pl": "zaimplementowany i odczytywany",
-        "zh-cn": "执行的薪资和一读"
       }
     },
     "title": "Drag-Indicator",

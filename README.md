@@ -21,7 +21,7 @@ e.g. you can use it for power or temperature values.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 2.1.2 (2023-11-12)
 * (BenAhrdt) insert check vor node version >= 16
 
 ### 2.1.1 (2023-11-02)
