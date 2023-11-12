@@ -1,184 +1,190 @@
 {
-  "common": {
-    "name": "drag-indicator",
-    "version": "2.1.2",
-    "news": {
-      "2.1.2": {
-        "en": "insert check vor node version >= 16",
-        "de": "kontrollieren vor knoten version >= anhang",
-        "ru": "вставить проверить vor node версия >= 16, 16, 16",
-        "pt": "insert check vor node version >= 16",
-        "nl": "insert check vor node versie 16",
-        "fr": "insert check vor node version phy= 16",
-        "it": ">= 16",
-        "es": "introducir ver la versión del nodo vor 16",
-        "pl": "instrukcja wejściowa w wersji węzłowej >== 16",
-        "uk": "вставити перевірку вихрового вузла версії >= 16 мар",
-        "zh-cn": "加 检查 16"
-      },
-      "2.1.1": {
-        "en": "correction in jsonconfig schema",
-        "de": "korrektur im jsonconfig schema",
-        "ru": "коррекция в jsonconfig schema",
-        "pt": "correção em jsonconfig schema",
-        "nl": "vertaling:",
-        "fr": "correction dans le schéma de jsonconfig",
-        "it": "correzione nello schema jsonconfig",
-        "es": "corrección en jsonconfig schema",
-        "pl": "poprawka w schemacie jsonconfig",
-        "uk": "корекція в jsonconfig schema",
-        "zh-cn": "更正"
-      },
-      "2.1.0": {
-        "en": "depencies updated",
-        "de": "depene aktualisiert",
-        "ru": "частоты обновлены",
-        "pt": "competências atualizadas",
-        "nl": "_",
-        "fr": "depencies updated",
-        "it": "spese aggiornate",
-        "es": "depencies updated",
-        "pl": "depozyty",
-        "uk": "depencies оновлений",
-        "zh-cn": "最新资料"
-      },
-      "2.0.9": {
-        "en": "updated to release script V3",
-        "de": "aktualisiert zum Release-Skript V3",
-        "ru": "обновлено для выпуска скрипта V3",
-        "pt": "atualizado para lançar script V3",
-        "nl": "vertaling:",
-        "fr": "mise à jour du script V3",
-        "it": "aggiornato allo script di rilascio V3",
-        "es": "actualizado para lanzar script V3",
-        "pl": "uaktualnianie scenariusza V3",
-        "zh-cn": "附录五3"
-      },
-      "2.0.8": {
-        "en": "updated to release script V3",
-        "de": "aktualisiert zum Release-Skript V3",
-        "ru": "обновлено для выпуска скрипта V3",
-        "pt": "atualizado para lançar script V3",
-        "nl": "vertaling:",
-        "fr": "mise à jour du script V3",
-        "it": "aggiornato allo script di rilascio V3",
-        "es": "actualizado para lanzar script V3",
-        "pl": "uaktualnianie scenariusza V3",
-        "zh-cn": "附录五3"
-      },
-      "2.0.7": {
-        "en": "cronjob wizard removed and complex mode enabled",
-        "de": "cronjob assistent entfernt und komplexer modus aktiviert",
-        "ru": "cronjob wizard удален и комплексный режим включен",
-        "pt": "assistente cronjob removido e modo complexo habilitado",
-        "nl": "quality over quantity (qoq) releases vertaling:",
-        "fr": "cronjob wizard enlevé et mode complexe activé",
-        "it": "mago di cronjob rimosso e modalità complessa abilitata",
-        "es": "asistente de cronjob eliminado y modo complejo habilitado",
-        "pl": "cronjob wizard usunął i złożony tryb pozwalał usunąć się",
-        "zh-cn": "被撤职和复杂模式的复杂化"
-      },
-      "2.0.6": {
-        "en": "comment some lines for better undestanding",
-        "de": "kommentieren einige zeilen für besseres unverständnis",
-        "ru": "прокомментировать некоторые строки для лучшего непонимания",
-        "pt": "comentar algumas linhas para melhor imparcial",
-        "nl": "een paar lijnen voor beter onverslaanbaar",
-        "fr": "commenter certaines lignes pour une meilleure",
-        "it": "commentare alcune linee per meglio incomprensibile",
-        "es": "comentar algunas líneas para mejor indecente",
-        "pl": "skomentować",
-        "zh-cn": "评 注"
-      }
+    "common": {
+        "name": "drag-indicator",
+        "version": "2.1.2",
+        "news": {
+            "2.1.2": {
+                "en": "insert check vor node version >= 16",
+                "de": "kontrollieren vor knoten version >= anhang",
+                "ru": "вставить проверить vor node версия >= 16, 16, 16",
+                "pt": "insert check vor node version >= 16",
+                "nl": "insert check vor node versie 16",
+                "fr": "insert check vor node version phy= 16",
+                "it": ">= 16",
+                "es": "introducir ver la versión del nodo vor 16",
+                "pl": "instrukcja wejściowa w wersji węzłowej >== 16",
+                "uk": "вставити перевірку вихрового вузла версії >= 16 мар",
+                "zh-cn": "加 检查 16"
+            },
+            "2.1.1": {
+                "en": "correction in jsonconfig schema",
+                "de": "korrektur im jsonconfig schema",
+                "ru": "коррекция в jsonconfig schema",
+                "pt": "correção em jsonconfig schema",
+                "nl": "vertaling:",
+                "fr": "correction dans le schéma de jsonconfig",
+                "it": "correzione nello schema jsonconfig",
+                "es": "corrección en jsonconfig schema",
+                "pl": "poprawka w schemacie jsonconfig",
+                "uk": "корекція в jsonconfig schema",
+                "zh-cn": "更正"
+            },
+            "2.1.0": {
+                "en": "depencies updated",
+                "de": "depene aktualisiert",
+                "ru": "частоты обновлены",
+                "pt": "competências atualizadas",
+                "nl": "_",
+                "fr": "depencies updated",
+                "it": "spese aggiornate",
+                "es": "depencies updated",
+                "pl": "depozyty",
+                "uk": "depencies оновлений",
+                "zh-cn": "最新资料"
+            },
+            "2.0.9": {
+                "en": "updated to release script V3",
+                "de": "aktualisiert zum Release-Skript V3",
+                "ru": "обновлено для выпуска скрипта V3",
+                "pt": "atualizado para lançar script V3",
+                "nl": "vertaling:",
+                "fr": "mise à jour du script V3",
+                "it": "aggiornato allo script di rilascio V3",
+                "es": "actualizado para lanzar script V3",
+                "pl": "uaktualnianie scenariusza V3",
+                "zh-cn": "附录五3",
+                "uk": "оновлено для випуску сценарію V3"
+            },
+            "2.0.8": {
+                "en": "updated to release script V3",
+                "de": "aktualisiert zum Release-Skript V3",
+                "ru": "обновлено для выпуска скрипта V3",
+                "pt": "atualizado para lançar script V3",
+                "nl": "vertaling:",
+                "fr": "mise à jour du script V3",
+                "it": "aggiornato allo script di rilascio V3",
+                "es": "actualizado para lanzar script V3",
+                "pl": "uaktualnianie scenariusza V3",
+                "zh-cn": "附录五3",
+                "uk": "оновлено для випуску сценарію V3"
+            },
+            "2.0.7": {
+                "en": "cronjob wizard removed and complex mode enabled",
+                "de": "cronjob assistent entfernt und komplexer modus aktiviert",
+                "ru": "cronjob wizard удален и комплексный режим включен",
+                "pt": "assistente cronjob removido e modo complexo habilitado",
+                "nl": "quality over quantity (qoq) releases vertaling:",
+                "fr": "cronjob wizard enlevé et mode complexe activé",
+                "it": "mago di cronjob rimosso e modalità complessa abilitata",
+                "es": "asistente de cronjob eliminado y modo complejo habilitado",
+                "pl": "cronjob wizard usunął i złożony tryb pozwalał usunąć się",
+                "zh-cn": "被撤职和复杂模式的复杂化",
+                "uk": "Майстер cronjob видалено та ввімкнено складний режим"
+            },
+            "2.0.6": {
+                "en": "comment some lines for better undestanding",
+                "de": "kommentieren einige zeilen für besseres unverständnis",
+                "ru": "прокомментировать некоторые строки для лучшего непонимания",
+                "pt": "comentar algumas linhas para melhor imparcial",
+                "nl": "een paar lijnen voor beter onverslaanbaar",
+                "fr": "commenter certaines lignes pour une meilleure",
+                "it": "commentare alcune linee per meglio incomprensibile",
+                "es": "comentar algunas líneas para mejor indecente",
+                "pl": "skomentować",
+                "zh-cn": "评 注",
+                "uk": "прокоментуйте кілька рядків для кращого розуміння"
+            }
+        },
+        "title": "Drag-Indicator",
+        "titleLang": {
+            "en": "Drag-Indicator",
+            "de": "Schleppzeiger",
+            "ru": "Индикатор перетаскивания",
+            "pt": "Indicador de arrastar",
+            "nl": "Sleep-indicator",
+            "fr": "Indicateur de traînée",
+            "it": "Indicatore di trascinamento",
+            "es": "Indicador de arrastre",
+            "pl": "Wskaźnik przeciągania",
+            "zh-cn": "拖动指示器",
+            "uk": "Drag-Індикатор"
+        },
+        "desc": {
+            "en": "Shows the min and max of a selected value",
+            "de": "Zeigt das Minimum und Maximum eines ausgewählten Werts an",
+            "ru": "Показывает минимум и максимум выбранного значения",
+            "pt": "Mostra o mínimo e o máximo de um valor selecionado",
+            "nl": "Toont de min en max van een geselecteerde waarde",
+            "fr": "Affiche le min et le max d'une valeur sélectionnée",
+            "it": "Mostra il minimo e il massimo di un valore selezionato",
+            "es": "Muestra el mínimo y el máximo de un valor seleccionado",
+            "pl": "Pokazuje minimalną i maksymalną wartość wybranej wartości",
+            "zh-cn": "显示所选值的最小值和最大值",
+            "uk": "Показує мінімальне та максимальне значення вибраного значення"
+        },
+        "authors": [
+            "BenAhrdt <bsahrdt@gmail.com>"
+        ],
+        "keywords": [
+            "drag-indicator",
+            "Schleppzeiger",
+            "min",
+            "max"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "main.js",
+        "icon": "drag-indicator.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/BenAhrdt/ioBroker.drag-indicator/main/admin/drag-indicator.png",
+        "readme": "https://github.com/BenAhrdt/ioBroker.drag-indicator/blob/main/README.md",
+        "loglevel": "info",
+        "mode": "daemon",
+        "type": "misc-data",
+        "compact": true,
+        "connectionType": "local",
+        "dataSource": "poll",
+        "adminUI": {
+            "config": "json",
+            "custom": "json"
+        },
+        "supportCustoms": true,
+        "globalDependencies": [
+            {
+                "admin": ">=5.0.0"
+            }
+        ],
+        "dependencies": [
+            {
+                "js-controller": ">=2.0.0"
+            }
+        ]
     },
-    "title": "Drag-Indicator",
-    "titleLang": {
-      "en": "Drag-Indicator",
-      "de": "Schleppzeiger",
-      "ru": "Индикатор перетаскивания",
-      "pt": "Indicador de arrastar",
-      "nl": "Sleep-indicator",
-      "fr": "Indicateur de traînée",
-      "it": "Indicatore di trascinamento",
-      "es": "Indicador de arrastre",
-      "pl": "Wskaźnik przeciągania",
-      "zh-cn": "拖动指示器"
+    "native": {
+        "deleteStatesWithDisable": false
     },
-    "desc": {
-      "en": "Shows the min and max of a selected value",
-      "de": "Zeigt das Minimum und Maximum eines ausgewählten Werts an",
-      "ru": "Показывает минимум и максимум выбранного значения",
-      "pt": "Mostra o mínimo e o máximo de um valor selecionado",
-      "nl": "Toont de min en max van een geselecteerde waarde",
-      "fr": "Affiche le min et le max d'une valeur sélectionnée",
-      "it": "Mostra il minimo e il massimo di un valore selezionato",
-      "es": "Muestra el mínimo y el máximo de un valor seleccionado",
-      "pl": "Pokazuje minimalną i maksymalną wartość wybranej wartości",
-      "zh-cn": "显示所选值的最小值和最大值"
-    },
-    "authors": [
-      "BenAhrdt <bsahrdt@gmail.com>"
-    ],
-    "keywords": [
-      "drag-indicator",
-      "Schleppzeiger",
-      "min",
-      "max"
-    ],
-    "license": "MIT",
-    "platform": "Javascript/Node.js",
-    "main": "main.js",
-    "icon": "drag-indicator.png",
-    "enabled": true,
-    "extIcon": "https://raw.githubusercontent.com/BenAhrdt/ioBroker.drag-indicator/main/admin/drag-indicator.png",
-    "readme": "https://github.com/BenAhrdt/ioBroker.drag-indicator/blob/main/README.md",
-    "loglevel": "info",
-    "mode": "daemon",
-    "type": "misc-data",
-    "compact": true,
-    "connectionType": "local",
-    "dataSource": "poll",
-    "adminUI": {
-      "config": "json",
-      "custom": "json"
-    },
-    "supportCustoms": true,
-    "globalDependencies": [
-      {
-        "admin": ">=5.0.0"
-      }
-    ],
-    "dependencies": [
-      {
-        "js-controller": ">=2.0.0"
-      }
+    "objects": [],
+    "instanceObjects": [
+        {
+            "_id": "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.subscribedStatesCount",
+            "type": "state",
+            "common": {
+                "role": "indicator",
+                "name": "Count of subscribed states",
+                "type": "number",
+                "read": true,
+                "write": false,
+                "def": 0
+            },
+            "native": {}
+        }
     ]
-  },
-  "native": {
-    "deleteStatesWithDisable": false
-  },
-  "objects": [],
-  "instanceObjects": [
-    {
-      "_id": "info",
-      "type": "channel",
-      "common": {
-        "name": "Information"
-      },
-      "native": {}
-    },
-    {
-      "_id": "info.subscribedStatesCount",
-      "type": "state",
-      "common": {
-        "role": "indicator",
-        "name": "Count of subscribed states",
-        "type": "number",
-        "read": true,
-        "write": false,
-        "def": 0
-      },
-      "native": {}
-    }
-  ]
 }
