@@ -35,7 +35,8 @@ class DragIndicator extends utils.Adapter {
 		this.additionalIds = {
 			max : ".max",
 			min : ".min",
-			reset : ".reset"
+			reset : ".reset",
+			actual : ".actual"
 		};
 
 		this.observedValuesId = "observed_Values.";
@@ -151,12 +152,14 @@ class DragIndicator extends utils.Adapter {
 						role: common.role,
 						unit: common.unit,
 						read: true,
-						write: true
+						write: this.additionalIds[myId] !== this.additionalIds.actual
 					},
 					native: {},
 				});
-				this.log.debug(`state ${tempId} added / activated`);
-				this.subscribeStates(tempId);
+				if(this.additionalIds[myId] !== this.additionalIds.actual){
+					this.log.debug(`state ${tempId} added / activated`);
+					this.subscribeStates(tempId);
+				}
 				const lastState = await this.getStateAsync(tempId);
 				if(lastState !== undefined && lastState !== null){
 					this.activeStatesLastAdditionalValues[this.namespace + "." + tempId] = lastState.val;
@@ -314,18 +317,19 @@ class DragIndicator extends utils.Adapter {
 				if(this.activeStates[id]){
 					let tempId = this.createStatestring(id) + this.additionalIds.max;
 					if(state.val > this.activeStatesLastAdditionalValues[this.namespace + "." + tempId]){
-						const tempValue = state.val;
-						this.activeStatesLastAdditionalValues[this.namespace + "." + tempId] = tempValue;
-						this.setStateAsync(tempId,tempValue,true);
+						this.activeStatesLastAdditionalValues[this.namespace + "." + tempId] = state.val;
+						this.setStateAsync(tempId,state.val,true);
 					}
 					else{
 						tempId = this.createStatestring(id) + this.additionalIds.min;
 						if(state.val < this.activeStatesLastAdditionalValues[this.namespace + "." + tempId]){
-							const tempValue = state.val;
-							this.activeStatesLastAdditionalValues[this.namespace + "." + tempId] = tempValue;
-							this.setStateAsync(tempId,tempValue,true);
+							this.activeStatesLastAdditionalValues[this.namespace + "." + tempId] = state.val;
+							this.setStateAsync(tempId,state.val,true);
 						}
 					}
+					// Set actual value to internal state
+					tempId = this.createStatestring(id) + this.additionalIds.actual;
+					this.setStateAsync(tempId,state.val,true);
 				}
 
 				// Check Changes in internal States (also if id is active state)
