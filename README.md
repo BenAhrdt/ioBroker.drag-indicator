@@ -21,7 +21,7 @@ e.g. you can use it for power or temperature values.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 2.1.4 (2023-11-26)
 * (BenAhrdt) Add actual value to observed values (observe more times easily possible)
 
 ### 2.1.3 (2023-11-12)
