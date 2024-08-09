@@ -95,7 +95,6 @@
         "uk": "оновлено для випуску сценарію V3"
       }
     },
-    "title": "Drag-Indicator",
     "titleLang": {
       "en": "Drag-Indicator",
       "de": "Schleppzeiger",
@@ -126,6 +125,7 @@
       "BenAhrdt <bsahrdt@gmail.com>"
     ],
     "keywords": [
+      "ioBroker",
       "drag-indicator",
       "Schleppzeiger",
       "min",
@@ -141,6 +141,7 @@
     "extIcon": "https://raw.githubusercontent.com/BenAhrdt/ioBroker.drag-indicator/main/admin/drag-indicator.png",
     "readme": "https://github.com/BenAhrdt/ioBroker.drag-indicator/blob/main/README.md",
     "loglevel": "info",
+    "tier": 2,
     "mode": "daemon",
     "type": "misc-data",
     "compact": true,
