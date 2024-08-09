@@ -21,7 +21,7 @@ e.g. you can use it for power or temperature values.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 2.1.5 (2024-08-09)
 * (BenAhrdt) changes for check and service bot
 
 ### 2.1.4 (2023-11-26)

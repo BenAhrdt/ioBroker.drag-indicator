@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "drag-indicator",
-    "version": "2.1.4",
+    "version": "2.1.5",
     "news": {
+      "2.1.5": {
+        "en": "changes for check and service bot",
+        "de": "änderungen für check- und service-bot",
+        "ru": "изменения для проверки и обслуживания бота",
+        "pt": "alterações para verificação e serviço bot",
+        "nl": "wijzigingen voor controle en service bot",
+        "fr": "modifications pour vérifier et service bot",
+        "it": "modifiche per check e service bot",
+        "es": "cambios para cheque y servicio bot",
+        "pl": "zmiany dotyczące bota kontrolnego i serwisowego",
+        "uk": "зміни для перевірки та сервісу",
+        "zh-cn": "检查和服务机器人的更改"
+      },
       "2.1.4": {
         "en": "Add actual value to observed values (observe more times easily possible)",
         "de": "Ist-Wert zu beobachteten Werten hinzufügen (Beobachten Sie mehr Mal leicht möglich)",
@@ -69,19 +82,6 @@
         "zh-cn": "最新资料"
       },
       "2.0.9": {
-        "en": "updated to release script V3",
-        "de": "aktualisiert zum Release-Skript V3",
-        "ru": "обновлено для выпуска скрипта V3",
-        "pt": "atualizado para lançar script V3",
-        "nl": "vertaling:",
-        "fr": "mise à jour du script V3",
-        "it": "aggiornato allo script di rilascio V3",
-        "es": "actualizado para lanzar script V3",
-        "pl": "uaktualnianie scenariusza V3",
-        "zh-cn": "附录五3",
-        "uk": "оновлено для випуску сценарію V3"
-      },
-      "2.0.8": {
         "en": "updated to release script V3",
         "de": "aktualisiert zum Release-Skript V3",
         "ru": "обновлено для выпуска скрипта V3",
