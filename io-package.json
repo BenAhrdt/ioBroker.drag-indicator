@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "drag-indicator",
-    "version": "2.1.5",
+    "version": "2.1.6",
     "news": {
+      "2.1.6": {
+        "en": "correct changes for check and service bot",
+        "de": "korrekte änderungen für check und service bot",
+        "ru": "правильные изменения для проверки и обслуживания бота",
+        "pt": "alterações corretas para check e service bot",
+        "nl": "correcte wijzigingen voor controle en service bot",
+        "fr": "corrects changements pour vérifier et service bot",
+        "it": "modifiche corrette per check e service bot",
+        "es": "cambios correctos para cheque y servicio bot",
+        "pl": "poprawne zmiany dla bota czekowego i serwisowego",
+        "uk": "правильні зміни для перевірки та обслуговування бота",
+        "zh-cn": "检查和服务机器人的正确更改"
+      },
       "2.1.5": {
         "en": "changes for check and service bot",
         "de": "änderungen für check- und service-bot",
@@ -80,19 +93,6 @@
         "pl": "depozyty",
         "uk": "depencies оновлений",
         "zh-cn": "最新资料"
-      },
-      "2.0.9": {
-        "en": "updated to release script V3",
-        "de": "aktualisiert zum Release-Skript V3",
-        "ru": "обновлено для выпуска скрипта V3",
-        "pt": "atualizado para lançar script V3",
-        "nl": "vertaling:",
-        "fr": "mise à jour du script V3",
-        "it": "aggiornato allo script di rilascio V3",
-        "es": "actualizado para lanzar script V3",
-        "pl": "uaktualnianie scenariusza V3",
-        "zh-cn": "附录五3",
-        "uk": "оновлено для випуску сценарію V3"
       }
     },
     "titleLang": {
