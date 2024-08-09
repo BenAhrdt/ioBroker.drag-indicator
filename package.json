@@ -9,6 +9,7 @@
   "homepage": "https://github.com/BenAhrdt/ioBroker.drag-indicator",
   "license": "MIT",
   "keywords": [
+    "ioBroker",
     "drag-indicator",
     "Schleppzeiger",
     "min",
