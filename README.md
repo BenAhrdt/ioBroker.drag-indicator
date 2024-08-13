@@ -21,6 +21,10 @@ e.g. you can use it for power or temperature values.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+* (BenAhrdt) Update Dependencies: "js-controller": ">=5.0.19"
+  Check your System before installing new Version
+
 ### 2.1.6 (2024-08-09)
 * (BenAhrdt) correct changes for check and service bot
 
