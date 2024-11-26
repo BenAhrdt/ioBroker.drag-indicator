@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "drag-indicator",
-    "version": "2.2.0",
+    "version": "2.2.1",
     "news": {
+      "2.2.1": {
+        "en": "update schema and responsive tags",
+        "de": "schema und responsive tags aktualisieren",
+        "ru": "обновление схемы и адаптивные теги",
+        "pt": "atualização schema e tags responsivas",
+        "nl": "schema en responsieve tags bijwerken",
+        "fr": "mettre à jour le schéma et les balises réactives",
+        "it": "schema di aggiornamento e tag reattivi",
+        "es": "schema de actualización y etiquetas sensibles",
+        "pl": "aktualizacja schematów i identyfikatorów odpowiedzi",
+        "uk": "оновлення schema і чуйних тегів",
+        "zh-cn": "更新计划和响应标记"
+      },
       "2.2.0": {
         "en": "* Update Dependencies: \"js-controller\": \">=5.0.19\"\n  Check your System before installing new Version",
         "de": "* Update Dependencies: \"js-controller\": \">=5.0.19\"\nÜberprüfen Sie Ihr System vor der Installation neuer Version",
@@ -80,19 +93,6 @@
         "pl": "instrukcja wejściowa w wersji węzłowej >== 16",
         "uk": "вставити перевірку вихрового вузла версії >= 16 мар",
         "zh-cn": "加 检查 16"
-      },
-      "2.1.1": {
-        "en": "correction in jsonconfig schema",
-        "de": "korrektur im jsonconfig schema",
-        "ru": "коррекция в jsonconfig schema",
-        "pt": "correção em jsonconfig schema",
-        "nl": "vertaling:",
-        "fr": "correction dans le schéma de jsonconfig",
-        "it": "correzione nello schema jsonconfig",
-        "es": "corrección en jsonconfig schema",
-        "pl": "poprawka w schemacie jsonconfig",
-        "uk": "корекція в jsonconfig schema",
-        "zh-cn": "更正"
       }
     },
     "titleLang": {
