@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "drag-indicator",
-    "version": "2.2.1",
+    "version": "2.3.0",
     "news": {
+      "2.3.0": {
+        "en": "update eslint",
+        "de": "update eslint",
+        "ru": "обновление eslint",
+        "pt": "atualização eslint",
+        "nl": "eslint bijwerken",
+        "fr": "mettre à jour eslint",
+        "it": "aggiornamento eslint",
+        "es": "update eslint",
+        "pl": "update eslint",
+        "uk": "оновлення eslint",
+        "zh-cn": "更新埃斯林特"
+      },
       "2.2.1": {
         "en": "update schema and responsive tags",
         "de": "schema und responsive tags aktualisieren",
@@ -80,19 +93,6 @@
         "pl": "tłumaczenie dla uk dodała",
         "uk": "переклад для uk додано",
         "zh-cn": "增 编"
-      },
-      "2.1.2": {
-        "en": "insert check vor node version >= 16",
-        "de": "kontrollieren vor knoten version >= anhang",
-        "ru": "вставить проверить vor node версия >= 16, 16, 16",
-        "pt": "insert check vor node version >= 16",
-        "nl": "insert check vor node versie 16",
-        "fr": "insert check vor node version phy= 16",
-        "it": ">= 16",
-        "es": "introducir ver la versión del nodo vor 16",
-        "pl": "instrukcja wejściowa w wersji węzłowej >== 16",
-        "uk": "вставити перевірку вихрового вузла версії >= 16 мар",
-        "zh-cn": "加 检查 16"
       }
     },
     "titleLang": {

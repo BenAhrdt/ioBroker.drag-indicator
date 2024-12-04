@@ -21,7 +21,7 @@ e.g. you can use it for power or temperature values.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 2.3.0 (2024-12-04)
 * (BenAhrdt) update eslint
 
 ### 2.2.1 (2024-11-26)
