@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "drag-indicator",
-    "version": "2.3.0",
+    "version": "2.4.0",
     "news": {
+      "2.4.0": {
+        "en": "update admin adn js-controller dependencies",
+        "de": "admin adn js-controller abhängigkeiten",
+        "ru": "обновление admin adn js-контроллер зависимостей",
+        "pt": "atualizar as dependências admin adn js-controller",
+        "nl": "admin adn js-controller afhankelijkheden bijwerken",
+        "fr": "mettre à jour les dépendances de l'administrateur adn js-controller",
+        "it": "aggiornamento admin adn js-controller dipendenze",
+        "es": "actualizar las dependencias adn js-controller",
+        "pl": "update admin adn js- controller dependences",
+        "uk": "оновлення залежності аденоблокатора адміністратора",
+        "zh-cn": "更新管理员adn js控制器依赖性"
+      },
       "2.3.0": {
         "en": "update eslint",
         "de": "update eslint",
@@ -80,19 +93,6 @@
         "pl": "Dokładna wartość do obserwowanych wartości (obserwuje się bardziej łatwo)",
         "uk": "Додати фактичне значення, щоб побачити значення (зберігати більше разів легко)",
         "zh-cn": "增加观察到价值的实际价值(更易于使用)"
-      },
-      "2.1.3": {
-        "en": "translation for uk added",
-        "de": "übersetzung für uk zusätzlich",
-        "ru": "перевод для uk добавлен",
-        "pt": "tradução para uk adicionado",
-        "nl": "vertaling:",
-        "fr": "traduction pour uk ajouté",
-        "it": "traduzione per uk aggiunto",
-        "es": "traducción para uk añadido",
-        "pl": "tłumaczenie dla uk dodała",
-        "uk": "переклад для uk додано",
-        "zh-cn": "增 编"
       }
     },
     "titleLang": {
