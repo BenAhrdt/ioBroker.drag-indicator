@@ -20,7 +20,7 @@
     "url": "https://github.com/BenAhrdt/ioBroker.drag-indicator"
   },
   "engines": {
-    "node": ">= 18"
+    "node": ">= 20"
   },
   "dependencies": {
     "@iobroker/adapter-core": "^3.2.3",
