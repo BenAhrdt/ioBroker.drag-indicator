@@ -23,6 +23,7 @@ e.g. you can use it for power or temperature values.
 -->
 
 ### **WORK IN PROGRESS**
+* (BenAhrdt) update testing and eslint
 * (BenAhrdt) update dependencie core
 * (BenAhrdt) update dependencie to node >= 20
 * (BenAhrdt) update testing to 24.x
