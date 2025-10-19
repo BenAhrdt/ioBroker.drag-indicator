@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "drag-indicator",
-    "version": "2.4.0",
+    "version": "2.5.0",
     "news": {
+      "2.5.0": {
+        "en": "update Authorisation NPM\nupdate testing and eslint\nupdate dependencie core\nupdate dependencie to node >= 20\nupdate testing to 24.x",
+        "de": "update Autorisierung NPM\nupdate-tests und eslint\naktualisierung abhängiger kern\nupdate abhängigencier to node >= 20\nupdate-tests auf 24.x",
+        "ru": "обновление авторизации NPM\nтестирование обновлений и eslint\nобновление dependencie core\nобновление зависимых узлов >= 20\nтестирование обновлений до 24.x",
+        "pt": "atualizar a autorização NPM\natualizar testes e eslint\natualizar o núcleo dependente\natualização dependente para nó >= 20\natualização de testes para 24.x",
+        "nl": "nPM van de vergunning bijwerken\nupdate testen en eslint\nupdate afhankelijke kern\nupdate afhankelijk van knooppunt 20\nupdate testen naar 24.x",
+        "fr": "mise à jour de l'autorisation NPM\nmettre à jour les tests et l'essence\nmise à jour du noyau de dependencie\nmettre à jour dependencie to node >= 20\nmettre à jour les tests à 24.x",
+        "it": "aggiornamento Autorizzazione NPM\naggiornamento test ed eslint\naggiornamento indipendenza core\naggiornamento della dipendenza dal nodo 20\naggiornamento test a 24.x",
+        "es": "actualización Autorización NPM\npruebas de actualización y eslint\nactualización de los recursos básicos\nactualización dependecie de nodo √= 20\npruebas de actualización a 24.x",
+        "pl": "aktualizacja autoryzacji NPM\naktualizacja testów i eslint\nupdate dependencie core\naktualizacja zależnego do węzła > = 20\naktualizacja testów do 24.x",
+        "uk": "авторизація NPM\nоновлення тестування і eslint\nоновлення значення залежностей\nоновлення залежності до вершини >= 20 хв\nтестування оновлення до 24.x",
+        "zh-cn": "更新国家预防机制的授权\n更新测试和埃斯林特\n更新依赖核心\n更新依赖到节点qq 20 (简体中文)\n更新测试为 24.x"
+      },
       "2.4.0": {
         "en": "update admin adn js-controller dependencies",
         "de": "admin adn js-controller abhängigkeiten",
@@ -80,19 +93,6 @@
         "pl": "zmiany dotyczące bota kontrolnego i serwisowego",
         "uk": "зміни для перевірки та сервісу",
         "zh-cn": "检查和服务机器人的更改"
-      },
-      "2.1.4": {
-        "en": "Add actual value to observed values (observe more times easily possible)",
-        "de": "Ist-Wert zu beobachteten Werten hinzufügen (Beobachten Sie mehr Mal leicht möglich)",
-        "ru": "Добавьте действительное значение для наблюдаемых значений (сохранить более раз легко возможно)",
-        "pt": "Adicione valor real aos valores observados (observe mais vezes facilmente possível)",
-        "nl": "Voeg echte waarde toe om waarden te observeren",
-        "fr": "Ajouter la valeur réelle aux valeurs observées (observez plus de fois facilement possible)",
-        "it": "Aggiungi valore effettivo ai valori osservati (osserva più volte facilmente possibile)",
-        "es": "Añadir valor real a valores observados (observar más veces fácilmente posible)",
-        "pl": "Dokładna wartość do obserwowanych wartości (obserwuje się bardziej łatwo)",
-        "uk": "Додати фактичне значення, щоб побачити значення (зберігати більше разів легко)",
-        "zh-cn": "增加观察到价值的实际价值(更易于使用)"
       }
     },
     "titleLang": {
