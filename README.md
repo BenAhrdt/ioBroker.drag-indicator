@@ -15,7 +15,7 @@
 Shows the min and max of a selected value (of type number)
 So you can catch the extreme values of an state in a desired timerange.
 e.g. you can use it for power or temperature values.
-
+Test
 ## Changelog
 <!--
 	Placeholder for the next version (at the beginning of the line):
