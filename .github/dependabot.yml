@@ -11,3 +11,11 @@ updates:
     assignees:
       - "BenAhrdt"
     versioning-strategy: "increase"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "cron"
+      timezone: "Europe/Berlin"
+      cronjob: "24 3 27 * *"
+    open-pull-requests-limit: 15
