@@ -8,10 +8,10 @@
 // you need to create an adapter
 const utils = require('@iobroker/adapter-core');
 const schedule = require('node-schedule');
-const { isDeepStrictEqual } = require('util');
+const { isDeepStrictEqual } = require('node:util');
 
 // Load your modules here, e.g.:
-// const fs = require("fs");
+// const fs = require("node:fs");
 
 class DragIndicator extends utils.Adapter {
     /**
