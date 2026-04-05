@@ -21,6 +21,9 @@ e.g. you can use it for power or temperature values.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+* (BenAhrdt) implement device Manager
+
 ### 2.5.1 (2026-02-28)
 * (BenAhrdt) update dependecies
 

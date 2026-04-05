@@ -1,5 +1,6 @@
 'use strict';
-
+const objectStoreClass = require('./lib/modules/objectStore');
+const DragindicatorDeviceManagement = require('./lib/modules/deviceManager/deviceManager');
 /*
  * Created with @iobroker/create-adapter v2.1.1
  */
@@ -25,7 +26,7 @@ class DragIndicator extends utils.Adapter {
         this.on('ready', this.onReady.bind(this));
         this.on('stateChange', this.onStateChange.bind(this));
         this.on('objectChange', this.onObjectChange.bind(this));
-        // this.on("message", this.onMessage.bind(this));
+        this.on('message', this.onMessage.bind(this));
         this.on('unload', this.onUnload.bind(this));
 
         this.subscribecounterId = 'info.subscribedStatesCount';
@@ -52,6 +53,11 @@ class DragIndicator extends utils.Adapter {
      */
     async onReady() {
         // Initialize your adapter here
+        // Generate Object Store
+        this.objectStore = new objectStoreClass(this);
+        await this.objectStore.generateStoreObjects();
+        // Device Manager
+        this.deviceManagement = new DragindicatorDeviceManagement(this);
 
         //Read all states with custom configuration
         const customStateArray = await this.getObjectViewAsync('system', 'custom', {});
@@ -86,6 +92,7 @@ class DragIndicator extends utils.Adapter {
         }
 
         this.subscribeForeignObjects('*');
+        this.subscribeStates('*');
         this.setState(this.subscribecounterId, this.subscribecounter, true);
     }
 
@@ -124,6 +131,7 @@ class DragIndicator extends utils.Adapter {
             type: 'channel',
             common: {
                 name: customInfo.channelName,
+                desc: id,
             },
             native: {},
         });
@@ -253,6 +261,10 @@ class DragIndicator extends utils.Adapter {
     async onObjectChange(id, obj) {
         if (obj) {
             try {
+                // Internal ObjectStore
+                if (id.startsWith(this.objectStore?.startCondition)) {
+                    await this.objectStore?.updateDeviceObject(id, { payload: { object: obj } });
+                }
                 if (!obj.common.custom || !obj.common.custom[this.namespace]) {
                     if (this.activeStates[id]) {
                         this.clearStateArrayElement(id, false);
@@ -310,6 +322,10 @@ class DragIndicator extends utils.Adapter {
      */
     async onStateChange(id, state) {
         if (state) {
+            // Internal ObjectStore
+            if (id.startsWith(this.objectStore?.startCondition)) {
+                await this.objectStore?.updateDeviceObject(id, { payload: { state: state } });
+            }
             // Check if state.val is reachable
             if (state.val !== undefined && state.val !== null) {
                 // Check Changes in Foreign states
@@ -377,17 +393,23 @@ class DragIndicator extends utils.Adapter {
     //  * Using this method requires "common.messagebox" property to be set to true in io-package.json
     //  * @param {ioBroker.Message} obj
     //  */
-    // onMessage(obj) {
-    // 	if (typeof obj === "object" && obj.message) {
-    // 		if (obj.command === "send") {
-    // 			// e.g. send email or pushover or whatever
-    // 			this.log.debug("send command");
+    onMessage(obj) {
+        if (obj.command?.startsWith('dm:')) {
+            // Handled by Device Manager class itself, so ignored here
+            return;
+        }
+        if (typeof obj === 'object' && obj.message) {
+            if (obj.command === 'send') {
+                // e.g. send email or pushover or whatever
+                this.log.debug('send command');
 
-    // 			// Send response in callback if required
-    // 			if (obj.callback) this.sendTo(obj.from, obj.command, "Message received", obj.callback);
-    // 		}
-    // 	}
-    // }
+                // Send response in callback if required
+                if (obj.callback) {
+                    this.sendTo(obj.from, obj.command, 'Message received', obj.callback);
+                }
+            }
+        }
+    }
 }
 
 if (require.main !== module) {
