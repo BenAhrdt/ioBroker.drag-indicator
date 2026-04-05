@@ -53,6 +53,9 @@ class DragIndicator extends utils.Adapter {
      */
     async onReady() {
         // Initialize your adapter here
+        this.subscribeForeignObjects('*');
+        this.subscribeStates('*');
+
         // Generate Object Store
         this.objectStore = new objectStoreClass(this);
         await this.objectStore.generateStoreObjects();
@@ -91,8 +94,6 @@ class DragIndicator extends utils.Adapter {
             }
         }
 
-        this.subscribeForeignObjects('*');
-        this.subscribeStates('*');
         this.setState(this.subscribecounterId, this.subscribecounter, true);
     }
 

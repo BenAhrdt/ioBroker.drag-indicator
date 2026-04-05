@@ -158,8 +158,8 @@
       "link": "jsonTab.json",
       "singleton": false,
       "name": {
-        "en": "BDCounter",
-        "de": "BDCounter"
+        "en": "DRAG-IND",
+        "de": "Schleppzeiger"
       }
     },
     "supportCustoms": true,
@@ -197,6 +197,14 @@
         "read": true,
         "write": false,
         "def": 0
+      },
+      "native": {}
+    },
+    {
+      "_id": "observed_Values",
+      "type": "folder",
+      "common": {
+        "name": "Observerd Values"
       },
       "native": {}
     }
