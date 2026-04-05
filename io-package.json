@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "drag-indicator",
-    "version": "2.5.1",
+    "version": "2.6.0",
     "news": {
+      "2.6.0": {
+        "en": "implement device Manager",
+        "de": "gerät Manager implementieren",
+        "ru": "реализовать Device Manager",
+        "pt": "implementar o gerenciador de dispositivos",
+        "nl": "apparaatbeheer implementeren",
+        "fr": "implémenter le gestionnaire de périphériques",
+        "it": "implementare il dispositivo Manager",
+        "es": "implementar dispositivo Manager",
+        "pl": "zaimplementuj menedżera urządzeń",
+        "uk": "реалізація диспетчера пристроїв",
+        "zh-cn": "执行设备管理器"
+      },
       "2.5.1": {
         "en": "update dependecies",
         "de": "aktualisierung der abhängigkeiten",
@@ -80,19 +93,6 @@
         "pl": "* Update Dependences: \"js- controller\": \"> = 5.0.19\"\nSprawdź system przed zainstalowaniem nowej wersji",
         "uk": "* Оновлення залежностей: \"js-controller\": \">=5.0.19\"\nПеревірити систему до встановлення нової версії",
         "zh-cn": "* 更新属:\"js-controller\":\">=5.0.19\"\n在安装新版本前检查您的系统"
-      },
-      "2.1.6": {
-        "en": "correct changes for check and service bot",
-        "de": "korrekte änderungen für check und service bot",
-        "ru": "правильные изменения для проверки и обслуживания бота",
-        "pt": "alterações corretas para check e service bot",
-        "nl": "correcte wijzigingen voor controle en service bot",
-        "fr": "corrects changements pour vérifier et service bot",
-        "it": "modifiche corrette per check e service bot",
-        "es": "cambios correctos para cheque y servicio bot",
-        "pl": "poprawne zmiany dla bota czekowego i serwisowego",
-        "uk": "правильні зміни для перевірки та обслуговування бота",
-        "zh-cn": "检查和服务机器人的正确更改"
       }
     },
     "titleLang": {
