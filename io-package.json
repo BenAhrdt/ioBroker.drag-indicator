@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "drag-indicator",
-    "version": "2.6.0",
+    "version": "2.6.1",
     "news": {
+      "2.6.1": {
+        "en": "correct nameing of tab and subscribtion",
+        "de": "korrekte bezeichnung der registerkarte und anmeldung",
+        "ru": "правильное название вкладки и подписки",
+        "pt": "nome correto da aba e subscrição",
+        "nl": "correcte naamgeving van tabblad en subscriptie",
+        "fr": "le nom correct de l'onglet et de la subscribtion",
+        "it": "corretta denominazione di scheda e sottoscrizione",
+        "es": "correcto nombre de pestaña y suscripción",
+        "pl": "poprawna nazwa karty i subskrypcji",
+        "uk": "правильне ім'я вкладки і підсріб",
+        "zh-cn": "标签和子列表的正确名称"
+      },
       "2.6.0": {
         "en": "implement device Manager",
         "de": "gerät Manager implementieren",
@@ -80,19 +93,6 @@
         "pl": "aktualizacja schematów i identyfikatorów odpowiedzi",
         "uk": "оновлення schema і чуйних тегів",
         "zh-cn": "更新计划和响应标记"
-      },
-      "2.2.0": {
-        "en": "* Update Dependencies: \"js-controller\": \">=5.0.19\"\n  Check your System before installing new Version",
-        "de": "* Update Dependencies: \"js-controller\": \">=5.0.19\"\nÜberprüfen Sie Ihr System vor der Installation neuer Version",
-        "ru": "* Зависимость обновления: \"Js-controller\": \">=5.0.19\"\nПроверьте свою систему перед установкой новой версии",
-        "pt": "* Dependências de atualização: \"js-controller\": \">=5.0.19\"\nVerifique o seu sistema antes de instalar nova versão",
-        "nl": "* Update afhankelijkheden: \"js-controller\": \">=5.0.19\"\nControleer uw systeem voordat u nieuwe versie installeert",
-        "fr": "* Mise à jour des dépendances : \"js-controller\" : \">=5.0.19\"\nVérifiez votre système avant d'installer une nouvelle version",
-        "it": "* Dipendenze di aggiornamento: \"js-controller\": \">=5.0.19\"\nControlla il tuo sistema prima di installare una nuova versione",
-        "es": "* Actualizar Dependencias: \"js-controller\": \"Inglés=5.0.19\"\nCompruebe su sistema antes de instalar nueva versión",
-        "pl": "* Update Dependences: \"js- controller\": \"> = 5.0.19\"\nSprawdź system przed zainstalowaniem nowej wersji",
-        "uk": "* Оновлення залежностей: \"js-controller\": \">=5.0.19\"\nПеревірити систему до встановлення нової версії",
-        "zh-cn": "* 更新属:\"js-controller\":\">=5.0.19\"\n在安装新版本前检查您的系统"
       }
     },
     "titleLang": {
