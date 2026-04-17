@@ -1,11 +1,13 @@
 {
   "i18n": true,
+  "type": "panel",
   "items": {
     "_basicSettings": {
       "newLine": true,
       "type": "header",
       "text": "dragindicatorSetting",
-      "sm": 20
+      "sm": 20,
+      "size": 2
     },
     "warningText": {
       "newLine": true,
