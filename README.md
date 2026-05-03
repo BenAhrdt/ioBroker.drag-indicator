@@ -110,6 +110,8 @@ e.g. you can use it for power or temperature values.
 ### 1.14.7
 * (BenAhrdt) first official version
 
+[Older changelogs can be found there](CHANGELOG_OLD.md)
+
 ## License
 MIT License
 
