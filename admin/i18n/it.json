@@ -1,0 +1,10 @@
+{
+    "automaticReset": "ripristino automatico",
+    "automaticResetTooltip": "inserire il cronJob desiderato, che azzera automaticamente l'indicatore di trascinamento.",
+    "deleteStateWithDisableText": "elimina lo stato con disabilita",
+    "dragindicatorSettings": "impostazioni dell'indicatore di trascinamento",
+    "infoToCustomConfiglabel": "eseguire la configurazione nella configurazione personalizzata di uno stato",
+    "justTypeNumber": "Attenzione, possono essere selezionati solo punti dati di tipo numero",
+    "valueName": "nome",
+    "valueNameTooltip": "inserire il Nome dello stato, che verrà visualizzato nella cartella del canale in seguito."
+}

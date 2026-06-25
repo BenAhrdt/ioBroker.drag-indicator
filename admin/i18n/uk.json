@@ -1,0 +1,10 @@
+{
+    "automaticReset": "автоматичний скидання",
+    "automaticResetTooltip": "вставте потрібний cronJob, який автоматично скидає індикатор перетягування.",
+    "deleteStateWithDisableText": "видалити стан із вимкненням",
+    "dragindicatorSettings": "налаштування dragindicator",
+    "infoToCustomConfiglabel": "виконати конфігурацію в користувацькій конфігурації стану",
+    "justTypeNumber": "Увага, можна вибирати лише точки даних номера типу",
+    "valueName": "назва",
+    "valueNameTooltip": "вставте назву стану, яка пізніше буде відображена в папці каналу."
+}

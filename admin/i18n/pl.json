@@ -1,0 +1,10 @@
+{
+    "automaticReset": "automatyczny reset",
+    "automaticResetTooltip": "wstaw żądany cronJob, który automatycznie zresetuje wskaźnik przeciągania.",
+    "deleteStateWithDisableText": "usuń stan z wyłączonym",
+    "dragindicatorSettings": "ustawienia dragindicatora",
+    "infoToCustomConfiglabel": "wykonaj konfigurację w custom-config stanu",
+    "justTypeNumber": "Uwaga, można wybrać tylko punkty danych o numerze typu",
+    "valueName": "Nazwa",
+    "valueNameTooltip": "wstaw nazwę stanu, która będzie później wyświetlana w folderze kanału."
+}

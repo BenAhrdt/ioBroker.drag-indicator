@@ -1,0 +1,10 @@
+{
+    "automaticReset": "reinicio automático",
+    "automaticResetTooltip": "inserte el cronJob deseado, que restablece automáticamente el indicador de arrastre.",
+    "deleteStateWithDisableText": "eliminar estado con deshabilitar",
+    "dragindicatorSettings": "ajustes del indicador de arrastre",
+    "infoToCustomConfiglabel": "hacer la configuración en la configuración personalizada de un estado",
+    "justTypeNumber": "Atención, solo se pueden seleccionar puntos de datos del número de tipo",
+    "valueName": "nombre",
+    "valueNameTooltip": "inserte el nombre del estado, que se mostrará en la carpeta del canal más adelante."
+}

@@ -1,0 +1,10 @@
+{
+    "automaticReset": "automatic reset",
+    "automaticResetTooltip": "inset the desired cronJob, wich resets automaticaly the drag indicator.",
+    "deleteStateWithDisableText": "delete state with disable",
+    "dragindicatorSettings": "dragindicator settings",
+    "infoToCustomConfiglabel": "do configuration in custom-config of a state",
+    "justTypeNumber": "Attention, only data points of type number can be selected",
+    "valueName": "name",
+    "valueNameTooltip": "inset the Name of the state, which will be displayed in the channel folder later."
+}
